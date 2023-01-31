@@ -11,5 +11,7 @@ namespace HousingComplex.Entities
         [Column(name: "customer_id")] public Guid CustomerId { get; set; }
 
         public virtual Customer? Customer { get; set; }
+        
+        public virtual ICollection<PurchaseDetail> PurchaseDetails { get; set; }
     }
 }
