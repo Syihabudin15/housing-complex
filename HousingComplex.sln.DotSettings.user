@@ -1,0 +1,20 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">C:\Users\user\AppData\Local\JetBrains\Rider2022.3\resharper-host\temp\Rider\vAny\CoverageData\_HousingComplex.2146724825\Snapshot\snapshot.utdcvr</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=193b63ec_002De4fa_002D4c21_002D835a_002Db02afe9f2768/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Should_ReturnRegisterResponse_When_RegisterDeveloper" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.AuthServiceTest.Should_ReturnRegisterResponse_When_RegisterDeveloper&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.AuthServiceTest.Should_ReturnRegisterResponse_When_RegisterCustomer&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.AuthServiceTest.Should_ReturnRegisterResponse_When_RegisterAdmin&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.AuthServiceTest.Should_ReturnLoginResponse_When_Login&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.AuthServiceTest.Should_ThrowNotFoundException_When_LoginEmailNotFound&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.AuthServiceTest.Should_UnauthorizedException_When_LoginPasswordIsWrong&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.CustomerServiceTest.Should_ReturnCustomer_When_CreateCustomer&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.DeveloperServiceTest.Should_ReturnDeveloper_When_CreateDeveloper&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.RoleServiceTest.Should_ReturnRole_When_GetOrSave&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.RoleServiceTest.Should_ReturnRole_When_GetOrSaveERoleFound&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Controllers.AuthControllerTest.Should_ReturnCreated_When_RegisterDeveloper&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Controllers.AuthControllerTest.Should_ReturnCreated_When_RegisterCustomer&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Controllers.AuthControllerTest.Should_ReturnCreated_When_RegisterAdmin&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Controllers.AuthControllerTest.Should_ReturnOk_When_Login&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

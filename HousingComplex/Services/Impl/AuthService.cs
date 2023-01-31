@@ -13,7 +13,6 @@ public class AuthService : IAuthService
     private readonly IPersistence _persistence;
     private readonly IRoleService _roleService;
     private readonly IDeveloperService _developerService;
-
     private readonly ICustomerService _customerService;
     private readonly IJwtUtils _jwtUtils;
 

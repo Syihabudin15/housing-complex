@@ -30,11 +30,11 @@ public class AuthController : BaseController
             Data = user
         };
         
-        return Created("api/auth/register", commonResponse);
+        return Created("api/auth/register-developer", commonResponse);
     }
     [AllowAnonymous]
     [HttpPost("register-customer")]
-    public async Task<IActionResult> RegisterDeveloper([FromBody] RegisterCustomerRequest request)
+    public async Task<IActionResult> RegisterCustomer([FromBody] RegisterCustomerRequest request)
     {
         var user = await _authService.RegisterCustomer(request);
         var commonResponse = new CommonResponse<RegisterResponse>
@@ -44,7 +44,7 @@ public class AuthController : BaseController
             Data = user
         };
         
-        return Created("api/auth/register", commonResponse);
+        return Created("api/auth/register-customer", commonResponse);
     }
     
     [AllowAnonymous]
@@ -69,7 +69,7 @@ public class AuthController : BaseController
         var commonResponse = new CommonResponse<LoginResponse>
         {
             StatusCode = (int)HttpStatusCode.OK,
-            Message = "Succesfully Login",
+            Message = "Successfully Login",
             Data = user
         };
         return Ok(commonResponse);
