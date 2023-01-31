@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "udx+MHpd1QAjPffrifCE6aQiwaP4U+N6J2xQ08f/6toiXNsfCI4oyCF22dAMBJURL9y49anKbSiTpn8qc+jcdA==",
+  "dgSpecHash": "31ZQB4etXGEoi8ynAueO/CYk3Gs+6e8ZJMPf1Y0xFZP5Vi8HYJjCWDIad6wml4Gd92bH8O1aiknALsO8hMQSqA==",
   "success": true,
   "projectFilePath": "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\HousingComplex\\HousingComplex.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.13\\microsoft.aspnetcore.authentication.jwtbearer.6.0.13.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
