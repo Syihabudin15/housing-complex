@@ -5,15 +5,23 @@
     <projectFile profileName="IIS Express">HousingComplex/HousingComplex.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45d4c332-21a4-415c-8ed9-8c6475f4d782" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Entities/HousType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Entities/HouseType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+    <list default="true" id="e4755ec3-f2d2-4d28-9bea-5d8cd9b7521c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HousingComplex/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HousingComplex/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/HousingComplex.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/HousingComplex.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/HousingComplex.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/HousingComplex.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/ref/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/ref/HousingComplex.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/refint/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/refint/HousingComplex.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/HousingComplex.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/HousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/HousingComplex.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/UnitTestHousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/UnitTestHousingComplex.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/UnitTestHousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/UnitTestHousingComplex.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +31,27 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fadhil" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f4920c77-97db-49e9-8b42-10670917ca94" />
+        <option name="url" value="https://github.com/Syihabudin15/housing-complex.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://E:/Bootcamp .NET Enigma/Project/API/HousingComplexAPI/housing-complex/HousingComplex/Controllers/AuthController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Bootcamp .NET Enigma/Project/API/HousingComplexAPI/housing-complex/HousingComplex/Entities/HouseType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Bootcamp .NET Enigma/Project/API/HousingComplexAPI/housing-complex/HousingComplex/Repositories/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -108,11 +134,51 @@
       <option name="project" value="LOCAL" />
       <updated>1675137236203</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[Feature]">
+      <created>1675151782587</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675151782587</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="178" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 48% 406/788" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 48% 406/788" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 36% 404/632" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 48% 406/788" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 36% 404/632" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 37% 387/615" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 48% 406/788" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 36% 404/632" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 37% 387/615" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Repositories 0% 161/161" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
@@ -130,6 +196,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="[Feature] Login Register Jwt, Middleware, Exception Handling, Extension Method Services" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Feature] Login Register Jwt, Middleware, Exception Handling, Extension Method Services" />
+    <MESSAGE value="[Feature]" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Feature]" />
   </component>
 </project>
