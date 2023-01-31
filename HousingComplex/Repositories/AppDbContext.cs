@@ -10,9 +10,9 @@ namespace HousingComplex.Repositories
         public DbSet<Developer> Developers => Set<Developer>();
         public DbSet<Customer> Customers => Set<Customer>();
         public DbSet<Housing> Housings => Set<Housing>();
-        public DbSet<HousType> HousTypes => Set<HousType>();
+        public DbSet<HouseType> HouseTypes => Set<HouseType>();
         public DbSet<Spesification> Spesifications => Set<Spesification>();
-        public DbSet<ImageHousType> ImageHousTypes => Set<ImageHousType>();
+        public DbSet<ImageHouseType> ImageHouseTypes => Set<ImageHouseType>();
         public DbSet<Meet> Meets => Set<Meet>();
         public DbSet<Purchase> Purchases => Set<Purchase>();
         public DbSet<PurchaseDetail> PurchaseDetails => Set<PurchaseDetail>();

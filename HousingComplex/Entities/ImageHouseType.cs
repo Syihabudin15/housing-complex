@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HousingComplex.Entities
 {
-    [Table(name: "m_image_hous_type")]
-    public class ImageHousType
+    [Table(name: "m_image_house_type")]
+    public class ImageHouseType
     {
         [Key,Column(name: "id")] public Guid Id { get; set; }
         [Column(name: "filename")] public string FileName { get; set; } = string.Empty;
