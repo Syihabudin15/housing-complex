@@ -3,6 +3,7 @@ using HousingComplex.Middleware;
 using HousingComplex.Repositories;
 using HousingComplex.Security;
 using HousingComplex.Services;
+using HousingComplex.Services.Imp;
 using HousingComplex.Services.Impl;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,11 @@ public static class ApplicationServiceExtensions
         services.AddTransient<ICustomerService, CustomerService>();
         services.AddTransient<IJwtUtils, JwtUtils>();
         services.AddTransient<IDeveloperService, DeveloperService>();
+        services.AddTransient<IHousingService, HousingService>();
+        services.AddTransient<IFileService, FileService>();
+        services.AddTransient<IImageHouseTypeService, ImageHouseTypeService>();
+        services.AddTransient<ISpesificationService, SpesificationService>();
+        services.AddTransient<IHouseTypeService, HouseTypeService>();
 
         services.AddScoped<ExceptionHandlingMiddleware>();
 

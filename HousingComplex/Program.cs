@@ -8,6 +8,7 @@ using HousingComplex.Middleware;
 using HousingComplex.Security;
 using HousingComplex.Services;
 using HousingComplex.Services.Impl;
+using HousingComplex.Services.Imp;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddApplicationServices(builder.Configuration);
+
+
 
 var app = builder.Build();
 

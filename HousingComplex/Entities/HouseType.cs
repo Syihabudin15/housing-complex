@@ -7,7 +7,7 @@ namespace HousingComplex.Entities
     public class HouseType
     {
         [Key, Column(name: "id")] public Guid Id { get; set; }
-        [Column(name: "name", TypeName = "Varchar(100)")] public string Name { get; } = string.Empty;
+        [Column(name: "name", TypeName = "Varchar(100)")] public string Name { get; set; } = string.Empty;
         [Column(name: "specification_id")] public Guid SpesificationId { get; set; }
         [Column(name: "description", TypeName = "Varchar(500)")] public string Description { get; set; } = string.Empty;
         [Column(name: "housing_id")] public Guid HousingId { get; set; }
