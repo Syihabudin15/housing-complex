@@ -44,5 +44,18 @@ namespace HousingComplex.Controllers
             };
             return Ok(response);
         }
+
+        [HttpGet("name")]
+        public async Task<IActionResult> SearchByName([FromQuery]string name, [FromQuery]int page, [FromQuery]int size)
+        {
+            var result = await _houseTypeService.SearchByName(name, page, size);
+            CommonResponse<PageResponse<HouseType>> response = new()
+            {
+                StatusCode = (int)HttpStatusCode.OK,
+                Message = "Successfully search all data with name in HouseType",
+                Data = result
+            };
+            return Ok(response);
+        }
     }
 }

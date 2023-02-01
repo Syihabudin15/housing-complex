@@ -20,6 +20,28 @@ namespace UnitTestHousingComplex.Controllers
     {
         private readonly Mock<IHousingService> _service;
         private readonly HousingController _controller;
+        private readonly List<Housing> housings = new List<Housing>
+            {
+                new()
+                {
+                    Id = Guid.NewGuid(),
+                Name = "old Grand",
+                Address = "jl. juanda",
+                City = "Bandung",
+                DeveloperId = Guid.NewGuid(),
+                OpenTime = "Weekend"
+                },
+                new()
+                {
+                    Id = Guid.NewGuid(),
+                Name = "new Grand",
+                Address = "jl. budiman",
+                City = "Bandung",
+                DeveloperId = Guid.NewGuid(),
+                OpenTime = "Weekend"
+                }
+            };
+
         public HousingControllerTest()
         {
             _service = new Mock<IHousingService>();
@@ -57,27 +79,6 @@ namespace UnitTestHousingComplex.Controllers
         [Fact]
         public async Task Should_ReturnOk_When_GetAllHousing()
         {
-            List<Housing> housings = new List<Housing>
-            {
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                Name = "old Grand",
-                Address = "jl. juanda",
-                City = "Bandung",
-                DeveloperId = Guid.NewGuid(),
-                OpenTime = "Weekend"
-                },
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                Name = "new Grand",
-                Address = "jl. budiman",
-                City = "Bandung",
-                DeveloperId = Guid.NewGuid(),
-                OpenTime = "Weekend"
-                }
-            };
             var page = 1;
             var size = 5;
             var totalPage = (int)Math.Ceiling(housings.Count() / (decimal)size);
@@ -102,6 +103,65 @@ namespace UnitTestHousingComplex.Controllers
             Assert.Equal(response.StatusCode, result?.StatusCode);
             Assert.Equal(response.Data.Content.Count, result?.Data.Content.Count);
             Assert.Equal(response.Message, result?.Message);
+        }
+
+        [Fact]
+        public async Task Should_ReturnOk_WhenSearchbyName()
+        {
+            var page = 1;
+            var size = 5;
+            var name = "Grand";
+            var totalPage = (int)Math.Ceiling(housings.Count() / (decimal)size);
+
+            var response = new CommonResponse<PageResponse<Housing>>
+            {
+                StatusCode = (int)HttpStatusCode.OK,
+                Message = "Successfully search all data with name in Housing",
+                Data = new PageResponse<Housing>
+                {
+                    Content = housings,
+                    TotalPages = totalPage,
+                    TotalElement = housings.Count()
+                }
+            };
+            _service.Setup(serv => serv.SearchByName(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(response.Data);
+
+            var controller = await _controller.SearchByName(name, page, size) as OkObjectResult;
+            var result = controller?.Value as CommonResponse<PageResponse<Housing>>;
+
+            _service.Verify(serv => serv.SearchByName(name,1, 5), Times.Once);
+            Assert.Equal(response.StatusCode, result?.StatusCode);
+            Assert.Equal(response.Data.Content.Count, result?.Data.Content.Count);
+            Assert.Equal(response.Message, result?.Message);
+        }
+
+        [Fact]
+        public async Task Should_ReturnOk_When_SearchbyCity()
+        {
+            var page = 1;
+            var size = 5;
+            var city = "Bandung";
+            var totalPage = (int)Math.Ceiling(housings.Count() / (decimal)size);
+
+            var response = new CommonResponse<PageResponse<Housing>>
+            {
+                StatusCode = (int)HttpStatusCode.OK,
+                Message = "Successfully search all data with name in Housing",
+                Data = new PageResponse<Housing>
+                {
+                    Content = housings,
+                    TotalPages = totalPage,
+                    TotalElement = housings.Count()
+                }
+            };
+            _service.Setup(serv => serv.SearchByCity(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(response.Data);
+
+            var controller = await _controller.SearchByCity(city, page, size) as OkObjectResult;
+            var result = controller?.Value as CommonResponse<PageResponse<Housing>>;
+
+            _service.Verify(serv => serv.SearchByCity(city, 1, 5), Times.Once);
+            Assert.Equal(response.StatusCode, result?.StatusCode);
+            Assert.Equal(response.Data.Content.Count, result?.Data.Content.Count);
         }
     }
 }

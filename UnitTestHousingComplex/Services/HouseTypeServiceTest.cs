@@ -17,6 +17,21 @@ namespace UnitTestHousingComplex.Services
         private readonly Mock<IRepository<HouseType>> _repository;
         private readonly Mock<IPersistence> _persistence;
         private readonly IHouseTypeService _service;
+        private readonly List<HouseType> houseTypes = new List<HouseType>
+            {
+                new()
+                {
+                Id = Guid.NewGuid(),
+                Name = "Type 30/70",
+                Description = "Description",
+                Price = 80000000,
+                StockUnit = 20,
+                HousingId = Guid.NewGuid(),
+                SpesificationId = Guid.NewGuid(),
+                ImageId = Guid.NewGuid()
+                }
+            };
+
         public HouseTypeServiceTest()
         {
             _repository = new Mock<IRepository<HouseType>>();
@@ -47,20 +62,6 @@ namespace UnitTestHousingComplex.Services
         [Fact]
         public async Task Should_ReturnListHouseType_When_GetAllHouseType()
         {
-            List<HouseType> houseTypes = new List<HouseType>
-            {
-                new()
-                {
-                Id = Guid.NewGuid(),
-                Name = "Type 30/70",
-                Description = "Description",
-                Price = 80000000,
-                StockUnit = 20,
-                HousingId = Guid.NewGuid(),
-                SpesificationId = Guid.NewGuid(),
-                ImageId = Guid.NewGuid()
-                }
-            };
             _repository.Setup(repository => repository.FindAll(
             It.IsAny<Expression<Func<HouseType, bool>>>(),
             It.IsAny<int>(),
@@ -69,6 +70,21 @@ namespace UnitTestHousingComplex.Services
         )).ReturnsAsync(houseTypes);
 
             var result = await _service.GetAllHouseType(1, 5);
+
+            Assert.Equal(houseTypes.Count, result.Content.Count);
+        }
+
+        [Fact]
+        public async Task Should_ReturnListHouseType_When_SearchByName()
+        {
+            _repository.Setup(repository => repository.FindAll(
+            It.IsAny<Expression<Func<HouseType, bool>>>(),
+            It.IsAny<int>(),
+            It.IsAny<int>(),
+            It.IsAny<string[]>()
+        )).ReturnsAsync(houseTypes);
+            var name = "Type";
+            var result = await _service.SearchByName(name, 1, 5);
 
             Assert.Equal(houseTypes.Count, result.Content.Count);
         }

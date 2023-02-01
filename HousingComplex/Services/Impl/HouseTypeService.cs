@@ -1,6 +1,7 @@
 ﻿using HousingComplex.DTOs;
 using HousingComplex.Entities;
 using HousingComplex.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace HousingComplex.Services.Imp
 {
@@ -51,6 +52,27 @@ namespace HousingComplex.Services.Imp
             }
         }
 
+        public async Task<PageResponse<HouseType>> SearchByName(string name, int page, int size)
+        {
+            var houseTypes = await _repository.FindAll(house => EF.Functions.Like(house.Name, $"%{name}%"), page, size, new[] { "Spesification", "Housing.Developer", "ImageHouseType" });
+            try
+            {
+                var result = ConvertToList(houseTypes);
+                var totalPage = (int)Math.Ceiling(await _repository.Count() / (decimal)size);
+                PageResponse<HouseType> response = new()
+                {
+                    Content = result,
+                    TotalPages = totalPage,
+                    TotalElement = houseTypes.Count()
+                };
+                return response;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public List<HouseType> ConvertToList(IEnumerable<HouseType> houseTypes)
         {
             var listHouseType = houseTypes.Select(house => new HouseType
@@ -69,6 +91,6 @@ namespace HousingComplex.Services.Imp
             }).ToList();
             return listHouseType;
         }
-        
+
     }
 }
