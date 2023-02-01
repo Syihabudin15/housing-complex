@@ -2812,6 +2812,7 @@
           "Microsoft.EntityFrameworkCore": "7.0.2",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.2",
           "Microsoft.Extensions.DependencyInjection": "7.0.0",
+          "Newtonsoft.Json": "9.0.1",
           "Swashbuckle.AspNetCore": "6.2.3",
           "System.Text.Json": "7.0.1"
         },

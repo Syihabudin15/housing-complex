@@ -25,7 +25,7 @@ public class CustomerServiceTest
         var customer = new Customer
         {
             Id = Guid.NewGuid(),
-            FisrtName = "achmad",
+            FirstName = "achmad",
             LastName = "fikri",
             City = "bogor",
             PostalCode = "16913",
@@ -33,7 +33,7 @@ public class CustomerServiceTest
             PhoneNumber = "08123213412",
             UserCredentialId = Guid.NewGuid(),
             UserCredential = new UserCredential(),
-            Meets = new List<Meet>()
+            Meet = new Meet()
         };
 
         _mockRepository.Setup(repo => repo.Save(It.IsAny<Customer>()))

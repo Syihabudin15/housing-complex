@@ -5,6 +5,8 @@ using HousingComplex.Security;
 using HousingComplex.Services;
 using HousingComplex.Services.Impl;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -25,6 +27,24 @@ public static class ApplicationServiceExtensions
         services.AddTransient<ICustomerService, CustomerService>();
         services.AddTransient<IJwtUtils, JwtUtils>();
         services.AddTransient<IDeveloperService, DeveloperService>();
+        services.AddTransient<IHousingService, HousingService>();
+        services.AddTransient<IFileService, FileService>();
+        services.AddTransient<IImageHouseTypeService, ImageHouseTypeService>();
+        services.AddTransient<ISpesificationService, SpesificationService>();
+        services.AddTransient<IHouseTypeService, HouseTypeService>();
+        services.AddTransient<IMeetService, MeetService>();
+        services.AddTransient<ITransactionService, TransactionService>();
+
+        services.Configure<KestrelServerOptions>(options =>
+        {
+            options.Limits.MaxRequestBodySize = int.MaxValue;
+        });
+        services.Configure<FormOptions>(options =>
+        {
+            options.ValueLengthLimit = int.MaxValue;
+            options.MultipartBodyLengthLimit = int.MaxValue;
+            options.MultipartHeadersLengthLimit = int.MaxValue;
+        });
 
         services.AddScoped<ExceptionHandlingMiddleware>();
 

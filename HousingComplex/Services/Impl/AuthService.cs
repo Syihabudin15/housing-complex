@@ -72,7 +72,7 @@ public class AuthService : IAuthService
             var saveUser = await _repository.Save(userCredential);
             var customer = new Customer
             {
-                FisrtName = request.FirstName,
+                FirstName = request.FirstName,
                 LastName = request.LastName,
                 City = request.City,
                 PostalCode = request.PostalCode,
