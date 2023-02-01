@@ -78,9 +78,9 @@ namespace UnitTestHousingComplex.Controllers
                 OpenTime = "Weekend"
                 }
             };
-
-            //var size = 5;
-            //var totalPage = (int)Math.Ceiling(housings.Count() / (decimal)size);
+            var page = 1;
+            var size = 5;
+            var totalPage = (int)Math.Ceiling(housings.Count() / (decimal)size);
 
             var response = new CommonResponse<PageResponse<Housing>>
             {
@@ -89,13 +89,13 @@ namespace UnitTestHousingComplex.Controllers
                 Data = new PageResponse<Housing>
                 {
                     Content = housings,
-                    TotalPages = 2,
-                    TotalElement = 2
+                    TotalPages = totalPage,
+                    TotalElement = housings.Count()
                 }
             };
             _service.Setup(serv => serv.GetAllHousing(It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(response.Data);
 
-            var controller = await _controller.GetAllHousing(1, 5) as OkObjectResult;
+            var controller = await _controller.GetAllHousing(page, size) as OkObjectResult;
             var result = controller?.Value as CommonResponse<PageResponse<Housing>>;
             
             _service.Verify(serv => serv.GetAllHousing(1, 5), Times.Once);
