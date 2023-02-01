@@ -42,7 +42,7 @@ namespace HousingComplex.Controllers
                 Message = "Successfully get all data Housing",
                 Data = result
             };
-            return Ok(result);
+            return Ok(response);
         }
     }
 }
