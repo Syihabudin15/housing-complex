@@ -7,31 +7,29 @@
   <component name="ChangeListManager">
     <list default="true" id="e4755ec3-f2d2-4d28-9bea-5d8cd9b7521c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HousingComplex/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HousingComplex/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Controllers/MeetController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Controllers/MeetController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Controllers/TransactionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Controllers/TransactionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Dto/Transaction/TransactionResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Dto/Transaction/TransactionRequestResponse.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Entities/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Entities/Customer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Entities/Developer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Entities/Developer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Middleware/ExceptionHandlingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Middleware/ExceptionHandlingMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Repositories/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Repositories/Repository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/IDeveloperService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/IDeveloperService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/IMeetService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/IMeetService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/ITransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/ITransactionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/Impl/DeveloperService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/DeveloperService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/Services/Impl/MeetService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/MeetService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/Services/Impl/TransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/TransactionService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/ref/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/ref/HousingComplex.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/refint/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/refint/HousingComplex.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/Services/CustomerServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/Services/CustomerServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/Services/DeveloperServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/Services/DeveloperServiceTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/HousingComplex.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/HousingComplex.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/HousingComplex.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/HousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/HousingComplex.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/UnitTestHousingComplex.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/UnitTestHousingComplex.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/UnitTestHousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/UnitTestHousingComplex.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/UnitTestHousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/bin/Debug/net6.0/UnitTestHousingComplex.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/ref/UnitTestHousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/ref/UnitTestHousingComplex.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/refint/UnitTestHousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/refint/UnitTestHousingComplex.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +57,11 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/19/28bc3553/TestInvoker`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/377b61b613ea444f826f377d9474ffca3c9a8/71/554180ca/ExecutionTimer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/123735509fa19d358d3971345e1872b6d26687d1b343ad7ca37af43930694c/Guid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d9a41d47547e1fe7fe548b21ab4de12cc2671170a023bc8c629017837eb5f4/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Bootcamp .NET Enigma/Project/API/HousingComplexAPI/housing-complex/HousingComplex/Entities/Customer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a42ba4db448ed38dcb9fb39194c637a317a8281856b88e139e8a905ee6d12b/Guid.Windows.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -139,7 +139,9 @@
       <updated>1675130819184</updated>
       <workItem from="1675130820482" duration="7008000" />
       <workItem from="1675137881855" duration="610000" />
-      <workItem from="1675295031555" duration="7536000" />
+      <workItem from="1675295031555" duration="13630000" />
+      <workItem from="1675309715611" duration="383000" />
+      <workItem from="1675310106521" duration="8343000" />
     </task>
     <task id="LOCAL-00001" summary="[Feature] Login Register Jwt, Middleware, Exception Handling, Extension Method Services">
       <created>1675137236203</created>
@@ -169,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675237797544</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[Feature] Get Schedule Meeting">
+      <created>1675303736313</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675303736313</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,38 +188,23 @@
     <option name="coveragePercentColumnWidth" value="150" />
     <option name="sortOrder" value="DESCENDING" />
     <option name="sortedColumn" value="1" />
-    <option name="symbolColumnWidth" value="178" />
+    <option name="symbolColumnWidth" value="259" />
     <coverage-tree-state>
       <expand>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 26% 1105/1485" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 63% 656/1750" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 26% 1105/1485" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="HousingComplex 17% 1103/1329" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 63% 656/1750" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 52% 653/1348" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 26% 1105/1485" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="HousingComplex 17% 1103/1329" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="HousingComplex 17% 1086/1312" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-        </path>
-        <path>
-          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 26% 1105/1485" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="HousingComplex 17% 1103/1329" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="HousingComplex 17% 1086/1312" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Dto 30% 171/243" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-        </path>
-        <path>
-          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 26% 1105/1485" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="HousingComplex 17% 1103/1329" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="HousingComplex 17% 1086/1312" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="Dto 30% 171/243" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
-          <item name="ErrorResponse 0% 5/5" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 63% 656/1750" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 52% 653/1348" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 52% 636/1331" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
       </expand>
       <select />
@@ -235,7 +229,8 @@
     <MESSAGE value="[Feature]" />
     <MESSAGE value="." />
     <MESSAGE value="[Feature] Create Transaction With Payment Gateway and Schedule Meeting" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Feature] Create Transaction With Payment Gateway and Schedule Meeting" />
+    <MESSAGE value="[Feature] Get Schedule Meeting" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Feature] Get Schedule Meeting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -267,17 +262,30 @@
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/HousingComplex/Services/Impl/MeetService.cs</url>
-          <line>78</line>
-          <properties documentPath="E:\Bootcamp .NET Enigma\Project\API\HousingComplexAPI\housing-complex\HousingComplex\Services\Impl\MeetService.cs" initialLine="78" containingFunctionPresentation="method 'GetAllSchedule'">
+          <url>file://$PROJECT_DIR$/UnitTestHousingComplex/Services/MeetServiceTest.cs</url>
+          <line>144</line>
+          <properties documentPath="E:\Bootcamp .NET Enigma\Project\API\HousingComplexAPI\housing-complex\UnitTestHousingComplex\Services\MeetServiceTest.cs" initialLine="144" containingFunctionPresentation="method 'Should_ReturnMeetResponse_When_UpdateStatusMeet'">
             <startOffsets>
-              <option value="3131" />
+              <option value="6615" />
             </startOffsets>
             <endOffsets>
-              <option value="3192" />
+              <option value="6691" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="33" />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/UnitTestHousingComplex/Services/TransactionServiceTest.cs</url>
+          <line>284</line>
+          <properties documentPath="E:\Bootcamp .NET Enigma\Project\API\HousingComplexAPI\housing-complex\UnitTestHousingComplex\Services\TransactionServiceTest.cs" initialLine="283" containingFunctionPresentation="method 'Should_ReturnListPaymentList_When_GetAllPayment'">
+            <startOffsets>
+              <option value="10239" />
+            </startOffsets>
+            <endOffsets>
+              <option value="10311" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

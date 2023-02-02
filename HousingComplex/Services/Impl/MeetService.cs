@@ -17,7 +17,8 @@ public class MeetService : IMeetService
     private readonly ICustomerService _customerService;
     private readonly IDeveloperService _developerService;
 
-    public MeetService(IRepository<Meet> repository, IPersistence persistence, IHousingService housingService, ICustomerService customerService, IDeveloperService developerService)
+    public MeetService(IRepository<Meet> repository, IPersistence persistence, IHousingService housingService,
+        ICustomerService customerService, IDeveloperService developerService)
     {
         _repository = repository;
         _persistence = persistence;
@@ -38,40 +39,32 @@ public class MeetService : IMeetService
                 {
                     var result = await _repository.Save(meet);
                     await _persistence.SaveChangesAsync();
-                    return ConvertMeetToMeetResponse(result,customer,housing);
+                    return ConvertMeetToMeetResponse(result, customer, housing);
                 }
 
                 throw new ScheduleNotFoundException("Sorry The Housing is Close at weekday, try at weekend");
-            
+
             case "weekday":
-                if ((enteredDate.DayOfWeek >= DayOfWeek.Monday) && (enteredDate.DayOfWeek <= DayOfWeek.Friday) )
+                if ((enteredDate.DayOfWeek >= DayOfWeek.Monday) && (enteredDate.DayOfWeek <= DayOfWeek.Friday))
                 {
                     var result = await _repository.Save(meet);
                     await _persistence.SaveChangesAsync();
-                    return ConvertMeetToMeetResponse(result,customer,housing);
+                    return ConvertMeetToMeetResponse(result, customer, housing);
                 }
+
                 throw new ScheduleNotFoundException("Sorry The Housing is Close at weekend, Try at weekday");
         }
 
-        return ConvertMeetToMeetResponse(new Meet(),customer,housing);
-
+        return ConvertMeetToMeetResponse(new Meet(), customer, housing);
     }
 
     public async Task<MeetResponse> UpdateStatusMeet(string id)
     {
-        try
-        {
-            var result = await _repository.Find(meet => meet.Id.Equals(Guid.Parse(id)),new []{"Housing","Customer"});
-            if (result is null) throw new NotFoundException("Meeting Schedule Not Found!");
-            result.IsMeet = true;
-            await _persistence.SaveChangesAsync();
-            return ConvertMeetToMeetResponse(result,result.Customer,result.Housing);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
+        var result = await _repository.Find(meet => meet.Id.Equals(Guid.Parse(id)), new[] { "Housing", "Customer" });
+        if (result is null) throw new NotFoundException("Meeting Schedule Not Found!");
+        result.IsMeet = true;
+        await _persistence.SaveChangesAsync();
+        return ConvertMeetToMeetResponse(result, result.Customer, result.Housing);
     }
 
     public async Task<PageResponse<MeetResponse>> GetAllSchedule(int page, int size, string email)
@@ -103,7 +96,7 @@ public class MeetService : IMeetService
         }).ToList();
 
         var totalPage = (int)Math.Ceiling((developer.Housing.Meets.Count()) / (decimal)size);
-        
+
         PageResponse<MeetResponse> result = new()
         {
             Content = responses,
@@ -114,7 +107,7 @@ public class MeetService : IMeetService
         return result;
     }
 
-    private MeetResponse ConvertMeetToMeetResponse(Meet meet, Customer customer, Housing housing)
+    public MeetResponse ConvertMeetToMeetResponse(Meet meet, Customer customer, Housing housing)
     {
         var meetResponse = new MeetResponse
         {
