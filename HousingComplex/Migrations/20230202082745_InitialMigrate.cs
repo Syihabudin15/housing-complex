@@ -17,7 +17,7 @@ namespace HousingComplex.Migrations
                 {
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     filename = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    filesize = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    filesize = table.Column<long>(type: "bigint", nullable: false),
                     filepath = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     contenttype = table.Column<string>(name: "content_type", type: "nvarchar(max)", nullable: false)
                 },
@@ -121,7 +121,7 @@ namespace HousingComplex.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "t_purchase",
+                name: "t_transaction",
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -130,9 +130,9 @@ namespace HousingComplex.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_t_purchase", x => x.id);
+                    table.PrimaryKey("PK_t_transaction", x => x.id);
                     table.ForeignKey(
-                        name: "FK_t_purchase_m_customer_customer_id",
+                        name: "FK_t_transaction_m_customer_customer_id",
                         column: x => x.customerid,
                         principalTable: "m_customer",
                         principalColumn: "id",
@@ -166,13 +166,13 @@ namespace HousingComplex.Migrations
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    name = table.Column<string>(type: "Varchar(100)", nullable: false),
                     specificationid = table.Column<Guid>(name: "specification_id", type: "uniqueidentifier", nullable: false),
                     description = table.Column<string>(type: "Varchar(500)", nullable: false),
                     housingid = table.Column<Guid>(name: "housing_id", type: "uniqueidentifier", nullable: false),
                     price = table.Column<long>(type: "bigint", nullable: false),
                     stockunit = table.Column<int>(name: "stock_unit", type: "int", nullable: false),
-                    imageid = table.Column<Guid>(name: "image_id", type: "uniqueidentifier", nullable: false),
-                    ImageHouseTypeId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    imagehousetypeid = table.Column<Guid>(name: "image_house_type_id", type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -184,10 +184,11 @@ namespace HousingComplex.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_m_house_type_m_image_house_type_ImageHouseTypeId",
-                        column: x => x.ImageHouseTypeId,
+                        name: "FK_m_house_type_m_image_house_type_image_house_type_id",
+                        column: x => x.imagehousetypeid,
                         principalTable: "m_image_house_type",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_m_house_type_m_spesification_specification_id",
                         column: x => x.specificationid,
@@ -214,7 +215,7 @@ namespace HousingComplex.Migrations
                         column: x => x.customerid,
                         principalTable: "m_customer",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_m_meet_m_housing_housing_id",
                         column: x => x.housingid,
@@ -224,36 +225,38 @@ namespace HousingComplex.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "t_purchase_detail",
+                name: "t_transaction_detail",
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     housetypeid = table.Column<Guid>(name: "house_type_id", type: "uniqueidentifier", nullable: false),
-                    purchaseid = table.Column<Guid>(name: "purchase_id", type: "uniqueidentifier", nullable: false),
+                    transactionid = table.Column<Guid>(name: "transaction_id", type: "uniqueidentifier", nullable: false),
                     housingid = table.Column<Guid>(name: "housing_id", type: "uniqueidentifier", nullable: false),
                     referencepg = table.Column<string>(name: "reference_pg", type: "nvarchar(max)", nullable: false),
                     nominal = table.Column<long>(type: "bigint", nullable: false),
-                    description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ispaid = table.Column<bool>(name: "is_paid", type: "bit", nullable: false),
+                    orderid = table.Column<string>(name: "order_id", type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_t_purchase_detail", x => x.id);
+                    table.PrimaryKey("PK_t_transaction_detail", x => x.id);
                     table.ForeignKey(
-                        name: "FK_t_purchase_detail_m_house_type_house_type_id",
+                        name: "FK_t_transaction_detail_m_house_type_house_type_id",
                         column: x => x.housetypeid,
                         principalTable: "m_house_type",
                         principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_t_purchase_detail_m_housing_housing_id",
+                        name: "FK_t_transaction_detail_m_housing_housing_id",
                         column: x => x.housingid,
                         principalTable: "m_housing",
                         principalColumn: "id",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_t_purchase_detail_t_purchase_purchase_id",
-                        column: x => x.purchaseid,
-                        principalTable: "t_purchase",
+                        name: "FK_t_transaction_detail_t_transaction_transaction_id",
+                        column: x => x.transactionid,
+                        principalTable: "t_transaction",
                         principalColumn: "id",
                         onDelete: ReferentialAction.NoAction);
                 });
@@ -286,9 +289,9 @@ namespace HousingComplex.Migrations
                 column: "housing_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_m_house_type_ImageHouseTypeId",
+                name: "IX_m_house_type_image_house_type_id",
                 table: "m_house_type",
-                column: "ImageHouseTypeId");
+                column: "image_house_type_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_m_house_type_specification_id",
@@ -298,7 +301,8 @@ namespace HousingComplex.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_m_housing_developer_id",
                 table: "m_housing",
-                column: "developer_id");
+                column: "developer_id",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_m_meet_customer_id",
@@ -322,24 +326,25 @@ namespace HousingComplex.Migrations
                 column: "role_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_t_purchase_customer_id",
-                table: "t_purchase",
+                name: "IX_t_transaction_customer_id",
+                table: "t_transaction",
                 column: "customer_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_t_purchase_detail_house_type_id",
-                table: "t_purchase_detail",
+                name: "IX_t_transaction_detail_house_type_id",
+                table: "t_transaction_detail",
                 column: "house_type_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_t_purchase_detail_housing_id",
-                table: "t_purchase_detail",
+                name: "IX_t_transaction_detail_housing_id",
+                table: "t_transaction_detail",
                 column: "housing_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_t_purchase_detail_purchase_id",
-                table: "t_purchase_detail",
-                column: "purchase_id");
+                name: "IX_t_transaction_detail_transaction_id",
+                table: "t_transaction_detail",
+                column: "transaction_id",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -349,13 +354,13 @@ namespace HousingComplex.Migrations
                 name: "m_meet");
 
             migrationBuilder.DropTable(
-                name: "t_purchase_detail");
+                name: "t_transaction_detail");
 
             migrationBuilder.DropTable(
                 name: "m_house_type");
 
             migrationBuilder.DropTable(
-                name: "t_purchase");
+                name: "t_transaction");
 
             migrationBuilder.DropTable(
                 name: "m_housing");

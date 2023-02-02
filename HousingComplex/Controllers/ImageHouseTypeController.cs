@@ -11,7 +11,7 @@ namespace HousingComplex.Controllers
 {
     [ApiController]
     [Route("api/images")]
-    public class ImageHouseTypeController : ControllerBase
+    public class ImageHouseTypeController : BaseController
     {
         private readonly IImageHouseTypeService _imageHouseTypeService;
 
@@ -32,6 +32,14 @@ namespace HousingComplex.Controllers
                 Data = result
             };
             return Created("images", response);
+        }
+        
+        [AllowAnonymous]
+        [HttpGet("download/{id}")]
+        public async Task<IActionResult> DownloadFile(string id)
+        {
+            var profilePicture = await _imageHouseTypeService.DownloadProfilePicture(id);
+            return File(profilePicture.MemoryStream, profilePicture.ContentType, profilePicture.Filename);
         }
 
     }

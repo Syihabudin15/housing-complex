@@ -2,7 +2,7 @@
 using HousingComplex.Entities;
 using HousingComplex.Repositories;
 
-namespace HousingComplex.Services.Imp
+namespace HousingComplex.Services.Impl
 {
     public class SpesificationService : ISpesificationService
     {

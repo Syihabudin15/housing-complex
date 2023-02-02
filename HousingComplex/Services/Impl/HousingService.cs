@@ -1,9 +1,11 @@
-﻿using HousingComplex.DTOs;
+﻿using HousingComplex.Dto.Housing;
+using HousingComplex.DTOs;
 using HousingComplex.Entities;
+using HousingComplex.Exceptions;
 using HousingComplex.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace HousingComplex.Services.Imp
+namespace HousingComplex.Services.Impl
 {
     public class HousingService : IHousingService
     {
@@ -23,21 +25,47 @@ namespace HousingComplex.Services.Imp
                 await _persistence.SaveChangesAsync();
                 return save;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e);
                 throw;
             }
         }
 
-        public async Task<PageResponse<Housing>> GetAllHousing(int page, int size)
+        public async Task<Housing> GetById(string id)
+        {
+            try
+            {
+                var housing = await _repository.FindById(Guid.Parse(id));
+                if (housing is null) throw new NotFoundException("Housing not found!");
+                //var result = new Housing
+                //{
+                //    Id = housing.Id,
+                //    Name = housing.Name,
+                //    Address = housing.Address,
+                //    City = housing.City,
+                //    OpenTime = housing.OpenTime,
+                //    Developer = housing.Developer
+                //};
+                //return result;
+                return housing;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public async Task<PageResponse<HousingResponse>> GetAllHousing(int page, int size)
         {
             var housings = await _repository.FindAll(hous => true, page, size, new[] { "Developer" });
             try
             {
-                var response = ConvetToListHousing(housings);
+                var response = ConvetToListHousingResponse(housings);
 
                 var totalPage = (int)Math.Ceiling((await _repository.Count()) / (decimal)size);
-                PageResponse<Housing> result = new()
+                PageResponse<HousingResponse> result = new()
                 {
                     Content = response,
                     TotalPages = totalPage,
@@ -45,21 +73,22 @@ namespace HousingComplex.Services.Imp
                 };
                 return result;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e);
                 throw;
             }
         }
 
-        public async Task<PageResponse<Housing>> SearchByCity(string city, int page, int size)
+        public async Task<PageResponse<HousingResponse>> SearchByCity(string city, int page, int size)
         {
             var housings = await _repository.FindAll(hous => EF.Functions.Like(hous.City, $"%{city}%"), page, size, new[] { "Developer" });
             try
             {
-                var response = ConvetToListHousing(housings);
+                var response = ConvetToListHousingResponse(housings);
 
                 var totalPage = (int)Math.Ceiling((await _repository.Count()) / (decimal)size);
-                PageResponse<Housing> result = new()
+                PageResponse<HousingResponse> result = new()
                 {
                     Content = response,
                     TotalPages = totalPage,
@@ -67,20 +96,21 @@ namespace HousingComplex.Services.Imp
                 };
                 return result;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e);
                 throw;
             }
         }
-        public async Task<PageResponse<Housing>> SearchByName(string name, int page, int size)
+        public async Task<PageResponse<HousingResponse>> SearchByName(string name, int page, int size)
         {
             var housings = await _repository.FindAll(hous => EF.Functions.Like(hous.Name, $"%{name}%"), page, size, new[] { "Developer" });
             try
             {
-                var response = ConvetToListHousing(housings);
+                var response = ConvetToListHousingResponse(housings);
 
                 var totalPage = (int)Math.Ceiling((await _repository.Count()) / (decimal)size);
-                PageResponse<Housing> result = new()
+                PageResponse<HousingResponse> result = new()
                 {
                     Content = response,
                     TotalPages = totalPage,
@@ -88,25 +118,31 @@ namespace HousingComplex.Services.Imp
                 };
                 return result;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e);
                 throw;
             }
         }
 
-        public List<Housing> ConvetToListHousing(IEnumerable<Housing> housings)
+        public List<HousingResponse> ConvetToListHousingResponse(IEnumerable<Housing> housings)
         {
-            var response = housings.Select(hous => new Housing
+            var result = housings.Select(house => new HousingResponse
             {
-                Id = hous.Id,
-                Name = hous.Name,
-                Address = hous.Address,
-                City = hous.City,
-                OpenTime = hous.OpenTime,
-                DeveloperId = hous.DeveloperId,
-                Developer = hous.Developer
+                Id = house.Id.ToString(),
+                Name = house.Name,
+                Address = house.Address,
+                City = house.City,
+                OpenTime = house.OpenTime,
+                Developer = new Developer
+                {
+                    Id = house.Developer.Id,
+                    Name = house.Developer.Name,
+                    Address = house.Developer.Address,
+                    PhoneNumber = house.Developer.PhoneNumber,
+                }
             }).ToList();
-            return response;
+            return result;
         }
 
     }

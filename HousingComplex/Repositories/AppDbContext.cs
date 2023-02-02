@@ -14,8 +14,8 @@ namespace HousingComplex.Repositories
         public DbSet<Spesification> Spesifications => Set<Spesification>();
         public DbSet<ImageHouseType> ImageHouseTypes => Set<ImageHouseType>();
         public DbSet<Meet> Meets => Set<Meet>();
-        public DbSet<Purchase> Purchases => Set<Purchase>();
-        public DbSet<PurchaseDetail> PurchaseDetails => Set<PurchaseDetail>();
+        public DbSet<Transaction> Purchases => Set<Transaction>();
+        public DbSet<TransactionDetail> PurchaseDetails => Set<TransactionDetail>();
 
         protected AppDbContext()
         {

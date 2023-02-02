@@ -10,7 +10,7 @@ namespace HousingComplex.Controllers
 {
     [ApiController]
     [Route("api/spesifications")]
-    public class SpesificationController : ControllerBase
+    public class SpesificationController : BaseController
     {
         private readonly ISpesificationService _spesificationService;
 
@@ -34,6 +34,7 @@ namespace HousingComplex.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Developer")]
         public async Task<IActionResult> GetAllSpesification([FromQuery] int page, [FromQuery] int size)
         {
             var result = await _spesificationService.GetAllSpesification(page, size);

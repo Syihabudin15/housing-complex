@@ -7,7 +7,7 @@ namespace HousingComplex.Entities
     public class Customer
     {
         [Key, Column(name: "id")] public Guid Id { get; set; }
-        [Column(name: "first_name", TypeName = "Varchar(50)")] public string FisrtName { get; set; } = string.Empty;
+        [Column(name: "first_name", TypeName = "Varchar(50)")] public string FirstName { get; set; } = string.Empty;
         [Column(name: "last_name", TypeName = "Varchar(50)")] public string LastName { get; set; } = string.Empty;
         [Column(name: "city", TypeName = "Varchar(50)")] public string City { get; set; } = string.Empty;
         [Column(name: "postal_code", TypeName = "Varchar(5)")] public string PostalCode { get; set; } = string.Empty;
@@ -16,6 +16,6 @@ namespace HousingComplex.Entities
         [Column(name: "user_credential_id")] public Guid UserCredentialId { get; set; }
         
         public virtual UserCredential? UserCredential { get; set; }
-        public ICollection<Meet>? Meets { get; set; }
+        public virtual ICollection<Meet>? Meet { get; set; }
     }
 }

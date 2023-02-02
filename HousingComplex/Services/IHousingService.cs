@@ -1,4 +1,5 @@
-﻿using HousingComplex.DTOs;
+﻿using HousingComplex.Dto.Housing;
+using HousingComplex.DTOs;
 using HousingComplex.Entities;
 
 namespace HousingComplex.Services
@@ -6,9 +7,10 @@ namespace HousingComplex.Services
     public interface IHousingService
     {
         Task<Housing> CreateNewHousing(Housing housing);
-        Task<PageResponse<Housing>> GetAllHousing(int page, int size);
-        Task<PageResponse<Housing>> SearchByCity(string city, int page, int size);
-        Task<PageResponse<Housing>> SearchByName(string name, int page, int size);
+        Task<Housing> GetById(string id);
+        Task<PageResponse<HousingResponse>> GetAllHousing(int page, int size);
+        Task<PageResponse<HousingResponse>> SearchByCity(string city, int page, int size);
+        Task<PageResponse<HousingResponse>> SearchByName(string name, int page, int size);
 
     }
 }

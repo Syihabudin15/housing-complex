@@ -39,7 +39,7 @@ namespace HousingComplex.Migrations
                         .HasColumnType("Varchar(50)")
                         .HasColumnName("city");
 
-                    b.Property<string>("FisrtName")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("Varchar(50)")
                         .HasColumnName("first_name");
@@ -125,12 +125,9 @@ namespace HousingComplex.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("housing_id");
 
-                    b.Property<Guid?>("ImageHouseTypeId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ImageId")
+                    b.Property<Guid>("ImageHouseTypeId")
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("image_id");
+                        .HasColumnName("image_house_type_id");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -193,7 +190,8 @@ namespace HousingComplex.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DeveloperId");
+                    b.HasIndex("DeveloperId")
+                        .IsUnique();
 
                     b.ToTable("m_housing");
                 });
@@ -262,72 +260,6 @@ namespace HousingComplex.Migrations
                     b.ToTable("m_meet");
                 });
 
-            modelBuilder.Entity("HousingComplex.Entities.Purchase", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("id");
-
-                    b.Property<Guid>("CustomerId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("customer_id");
-
-                    b.Property<DateTime>("TransDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("trans_date");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
-
-                    b.ToTable("t_purchase");
-                });
-
-            modelBuilder.Entity("HousingComplex.Entities.PurchaseDetail", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("id");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("description");
-
-                    b.Property<Guid>("HouseTypeId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("house_type_id");
-
-                    b.Property<Guid>("HousingId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("housing_id");
-
-                    b.Property<long>("Nominal")
-                        .HasColumnType("bigint")
-                        .HasColumnName("nominal");
-
-                    b.Property<Guid>("PurchaseId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("purchase_id");
-
-                    b.Property<string>("ReferencePg")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("reference_pg");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("HouseTypeId");
-
-                    b.HasIndex("HousingId");
-
-                    b.HasIndex("PurchaseId");
-
-                    b.ToTable("t_purchase_detail");
-                });
-
             modelBuilder.Entity("HousingComplex.Entities.Role", b =>
                 {
                     b.Property<Guid>("Id")
@@ -378,6 +310,82 @@ namespace HousingComplex.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("m_spesification");
+                });
+
+            modelBuilder.Entity("HousingComplex.Entities.Transaction", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("id");
+
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("customer_id");
+
+                    b.Property<DateTime>("TransDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("trans_date");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("t_transaction");
+                });
+
+            modelBuilder.Entity("HousingComplex.Entities.TransactionDetail", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("description");
+
+                    b.Property<Guid>("HouseTypeId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("house_type_id");
+
+                    b.Property<Guid>("HousingId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("housing_id");
+
+                    b.Property<bool>("IsPaid")
+                        .HasColumnType("bit")
+                        .HasColumnName("is_paid");
+
+                    b.Property<long>("Nominal")
+                        .HasColumnType("bigint")
+                        .HasColumnName("nominal");
+
+                    b.Property<string>("OrderId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("order_id");
+
+                    b.Property<string>("ReferencePg")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("reference_pg");
+
+                    b.Property<Guid>("TransactionId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("transaction_id");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HouseTypeId");
+
+                    b.HasIndex("HousingId");
+
+                    b.HasIndex("TransactionId")
+                        .IsUnique();
+
+                    b.ToTable("t_transaction_detail");
                 });
 
             modelBuilder.Entity("HousingComplex.Entities.UserCredential", b =>
@@ -444,7 +452,9 @@ namespace HousingComplex.Migrations
 
                     b.HasOne("HousingComplex.Entities.ImageHouseType", "ImageHouseType")
                         .WithMany()
-                        .HasForeignKey("ImageHouseTypeId");
+                        .HasForeignKey("ImageHouseTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("HousingComplex.Entities.Spesification", "Spesification")
                         .WithMany()
@@ -462,8 +472,8 @@ namespace HousingComplex.Migrations
             modelBuilder.Entity("HousingComplex.Entities.Housing", b =>
                 {
                     b.HasOne("HousingComplex.Entities.Developer", "Developer")
-                        .WithMany()
-                        .HasForeignKey("DeveloperId")
+                        .WithOne("Housing")
+                        .HasForeignKey("HousingComplex.Entities.Housing", "DeveloperId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -473,7 +483,7 @@ namespace HousingComplex.Migrations
             modelBuilder.Entity("HousingComplex.Entities.Meet", b =>
                 {
                     b.HasOne("HousingComplex.Entities.Customer", "Customer")
-                        .WithMany("Meets")
+                        .WithMany("Meet")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -489,7 +499,7 @@ namespace HousingComplex.Migrations
                     b.Navigation("Housing");
                 });
 
-            modelBuilder.Entity("HousingComplex.Entities.Purchase", b =>
+            modelBuilder.Entity("HousingComplex.Entities.Transaction", b =>
                 {
                     b.HasOne("HousingComplex.Entities.Customer", "Customer")
                         .WithMany()
@@ -500,7 +510,7 @@ namespace HousingComplex.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("HousingComplex.Entities.PurchaseDetail", b =>
+            modelBuilder.Entity("HousingComplex.Entities.TransactionDetail", b =>
                 {
                     b.HasOne("HousingComplex.Entities.HouseType", "HouseType")
                         .WithMany()
@@ -514,9 +524,9 @@ namespace HousingComplex.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HousingComplex.Entities.Purchase", "Purchase")
-                        .WithMany("PurchaseDetails")
-                        .HasForeignKey("PurchaseId")
+                    b.HasOne("HousingComplex.Entities.Transaction", "Transaction")
+                        .WithOne("TransactionDetail")
+                        .HasForeignKey("HousingComplex.Entities.TransactionDetail", "TransactionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -524,7 +534,7 @@ namespace HousingComplex.Migrations
 
                     b.Navigation("Housing");
 
-                    b.Navigation("Purchase");
+                    b.Navigation("Transaction");
                 });
 
             modelBuilder.Entity("HousingComplex.Entities.UserCredential", b =>
@@ -540,7 +550,12 @@ namespace HousingComplex.Migrations
 
             modelBuilder.Entity("HousingComplex.Entities.Customer", b =>
                 {
-                    b.Navigation("Meets");
+                    b.Navigation("Meet");
+                });
+
+            modelBuilder.Entity("HousingComplex.Entities.Developer", b =>
+                {
+                    b.Navigation("Housing");
                 });
 
             modelBuilder.Entity("HousingComplex.Entities.Housing", b =>
@@ -548,9 +563,9 @@ namespace HousingComplex.Migrations
                     b.Navigation("Meets");
                 });
 
-            modelBuilder.Entity("HousingComplex.Entities.Purchase", b =>
+            modelBuilder.Entity("HousingComplex.Entities.Transaction", b =>
                 {
-                    b.Navigation("PurchaseDetails");
+                    b.Navigation("TransactionDetail");
                 });
 #pragma warning restore 612, 618
         }

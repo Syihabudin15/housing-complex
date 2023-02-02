@@ -1,4 +1,5 @@
 ﻿using HousingComplex.Dto;
+using HousingComplex.Dto.Housing;
 using HousingComplex.DTOs;
 using HousingComplex.Entities;
 using HousingComplex.Services;
@@ -33,10 +34,11 @@ namespace HousingComplex.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllHousing([FromQuery]int page, [FromQuery] int size)
         {
             var result = await _housingService.GetAllHousing(page, size);
-            CommonResponse<PageResponse<Housing>> response = new()
+            CommonResponse<PageResponse<HousingResponse>> response = new()
             {
                 StatusCode = (int)HttpStatusCode.OK,
                 Message = "Successfully get all data Housing",
@@ -49,7 +51,7 @@ namespace HousingComplex.Controllers
         public async Task<IActionResult> SearchByName([FromQuery]string name, [FromQuery]int page, [FromQuery]int size)
         {
             var result = await _housingService.SearchByName(name, page, size);
-            CommonResponse<PageResponse<Housing>> response = new()
+            CommonResponse<PageResponse<HousingResponse>> response = new()
             {
                 StatusCode = (int)HttpStatusCode.OK,
                 Message = "Successfully search all data with name in Housing",
@@ -62,7 +64,7 @@ namespace HousingComplex.Controllers
         public async Task<IActionResult> SearchByCity([FromQuery]string city, [FromQuery]int page, [FromQuery]int size)
         {
             var result = await _housingService.SearchByCity(city,page, size);
-            CommonResponse<PageResponse<Housing>> response = new()
+            CommonResponse<PageResponse<HousingResponse>> response = new()
             {
                 StatusCode = (int)HttpStatusCode.OK,
                 Message = "Successfully search all data with name in Housing",

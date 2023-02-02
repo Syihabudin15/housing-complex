@@ -22,5 +22,6 @@ namespace HousingComplex.Repositories
         void DeleteAll(IEnumerable<TEntity> entities);
         Task<int> Count();
         Task<int> Count(Expression<Func<TEntity, bool>> criteria);
+        Task<int> Count(Expression<Func<TEntity, bool>> criteria, string[] includes);
     }
 }

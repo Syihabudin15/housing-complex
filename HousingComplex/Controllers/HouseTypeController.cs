@@ -1,4 +1,5 @@
 ﻿using HousingComplex.Dto;
+using HousingComplex.Dto.HouseType;
 using HousingComplex.DTOs;
 using HousingComplex.Entities;
 using HousingComplex.Services;
@@ -33,10 +34,11 @@ namespace HousingComplex.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllHouseType([FromQuery] int page, [FromQuery] int size)
         {
             var result = await _houseTypeService.GetAllHouseType(page, size);
-            CommonResponse<PageResponse<HouseType>> response = new()
+            CommonResponse<PageResponse<HouseTypeResponse>> response = new()
             {
                 StatusCode = (int)HttpStatusCode.OK,
                 Message = "Successfully get all data Housetype",
@@ -49,7 +51,7 @@ namespace HousingComplex.Controllers
         public async Task<IActionResult> SearchByName([FromQuery]string name, [FromQuery]int page, [FromQuery]int size)
         {
             var result = await _houseTypeService.SearchByName(name, page, size);
-            CommonResponse<PageResponse<HouseType>> response = new()
+            CommonResponse<PageResponse<HouseTypeResponse>> response = new()
             {
                 StatusCode = (int)HttpStatusCode.OK,
                 Message = "Successfully search all data with name in HouseType",

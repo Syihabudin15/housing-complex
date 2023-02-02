@@ -29,7 +29,12 @@ public class ExceptionHandlingMiddleware : IMiddleware
             await HandleExceptionAsync(context, e);
             _logger.LogError(e.Message);
         }
-        catch (Exception e) // Custome Exeption
+        catch (ScheduleNotFoundException e)
+        {
+            await HandleExceptionAsync(context, e);
+            _logger.LogError(e.Message);
+        }
+        catch (Exception e)
         {
             await HandleExceptionAsync(context, e);
             _logger.LogError(e.Message);
@@ -50,6 +55,16 @@ public class ExceptionHandlingMiddleware : IMiddleware
             case UnauthorizedException:
                 context.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
                 errorResponse.StatusCode = (int)HttpStatusCode.Unauthorized;
+                errorResponse.Message = exception.Message;
+                break;
+            case ScheduleNotFoundException:
+                context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                errorResponse.StatusCode = (int)HttpStatusCode.NotFound;
+                errorResponse.Message = exception.Message;
+                break;
+            case MeetingStatusNotTrueException:
+                context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                errorResponse.StatusCode = (int)HttpStatusCode.NotFound;
                 errorResponse.Message = exception.Message;
                 break;
             case not null:

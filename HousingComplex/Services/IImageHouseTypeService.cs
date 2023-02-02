@@ -8,5 +8,6 @@ namespace HousingComplex.Services
     public interface IImageHouseTypeService
     {
         Task<UploadFileResponse> CreateNewImageHouseType(IFormFile file);
+        Task<FileDownloadResponse> DownloadProfilePicture(string id);
     }
 }

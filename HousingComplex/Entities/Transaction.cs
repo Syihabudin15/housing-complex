@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HousingComplex.Entities
 {
-    [Table("t_purchase")]
-    public class Purchase
+    [Table("t_transaction")]
+    public class Transaction
     {
         [Key, Column(name: "id")] public Guid Id { get; set; }
         [Column(name: "trans_date")] public DateTime TransDate { get; set; }
@@ -12,6 +12,6 @@ namespace HousingComplex.Entities
 
         public virtual Customer? Customer { get; set; }
         
-        public virtual ICollection<PurchaseDetail> PurchaseDetails { get; set; }
+        public virtual TransactionDetail? TransactionDetail { get; set; }
     }
 }

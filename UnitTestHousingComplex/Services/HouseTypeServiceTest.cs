@@ -1,7 +1,7 @@
 ﻿using HousingComplex.Entities;
 using HousingComplex.Repositories;
 using HousingComplex.Services;
-using HousingComplex.Services.Imp;
+using HousingComplex.Services.Impl;
 using Moq;
 using System;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ namespace UnitTestHousingComplex.Services
                 StockUnit = 20,
                 HousingId = Guid.NewGuid(),
                 SpesificationId = Guid.NewGuid(),
-                ImageId = Guid.NewGuid()
+                ImageHouseTypeId = Guid.NewGuid()
                 }
             };
 
@@ -51,7 +51,7 @@ namespace UnitTestHousingComplex.Services
                 StockUnit = 20,
                 HousingId = Guid.NewGuid(),
                 SpesificationId = Guid.NewGuid(),
-                ImageId = Guid.NewGuid()
+                ImageHouseTypeId = Guid.NewGuid()
             };
             _repository.Setup(repo => repo.Save(It.IsAny<HouseType>())).ReturnsAsync(houseType);
             var result = await _service.CreateNewHouseType(houseType);
