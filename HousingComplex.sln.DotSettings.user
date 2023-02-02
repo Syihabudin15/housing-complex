@@ -16,5 +16,6 @@
     &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Controllers.AuthControllerTest.Should_ReturnCreated_When_RegisterCustomer&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Controllers.AuthControllerTest.Should_ReturnCreated_When_RegisterAdmin&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Controllers.AuthControllerTest.Should_ReturnOk_When_Login&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.AuthServiceTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

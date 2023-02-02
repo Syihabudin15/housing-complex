@@ -264,3 +264,4 @@ D:\Final_Project_Enigma\housingcomplex\HousingComplex\obj\Debug\net6.0\refint\Ho
 D:\Final_Project_Enigma\housingcomplex\HousingComplex\obj\Debug\net6.0\HousingComplex.pdb
 D:\Final_Project_Enigma\housingcomplex\HousingComplex\obj\Debug\net6.0\HousingComplex.genruntimeconfig.cache
 D:\Final_Project_Enigma\housingcomplex\HousingComplex\obj\Debug\net6.0\ref\HousingComplex.dll
+E:\Bootcamp .NET Enigma\Project\API\HousingComplexAPI\housing-complex\HousingComplex\bin\Debug\net6.0\Newtonsoft.Json.dll

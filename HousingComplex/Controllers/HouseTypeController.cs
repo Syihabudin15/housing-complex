@@ -33,6 +33,7 @@ namespace HousingComplex.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAllHouseType([FromQuery] int page, [FromQuery] int size)
         {
             var result = await _houseTypeService.GetAllHouseType(page, size);

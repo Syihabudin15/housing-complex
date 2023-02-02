@@ -1,6 +1,7 @@
 ﻿using HousingComplex.Dto.ImageType;
 using HousingComplex.DTOs;
 using HousingComplex.Entities;
+using HousingComplex.Exceptions;
 using HousingComplex.Repositories;
 
 namespace HousingComplex.Services.Impl
@@ -35,6 +36,13 @@ namespace HousingComplex.Services.Impl
                 FileName = profilePicture.FileName,
                 ContentType = profilePicture.ContentType
             };
+        }
+
+        public async Task<FileDownloadResponse> DownloadProfilePicture(string id)
+        {
+            var imageHouseType = await _repository.FindById(Guid.Parse(id));
+            if (imageHouseType is null) throw new NotFoundException("file not found");
+            return await _fileService.DownloadFile(imageHouseType.FilePath, imageHouseType.FileName);
         }
     }
 }

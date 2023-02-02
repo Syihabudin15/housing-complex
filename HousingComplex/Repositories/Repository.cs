@@ -155,5 +155,16 @@ namespace HousingComplex.Repositories
         {
             return await _context.Set<TEntity>().CountAsync(criteria);
         }
+        public async Task<int> Count(Expression<Func<TEntity, bool>> criteria, string[] includes)
+        {
+            var query = _context.Set<TEntity>().AsQueryable();
+
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+            
+            return await _context.Set<TEntity>().CountAsync(criteria);
+        }
     }
 }

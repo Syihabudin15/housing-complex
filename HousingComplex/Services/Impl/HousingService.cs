@@ -1,9 +1,10 @@
 ﻿using HousingComplex.DTOs;
 using HousingComplex.Entities;
+using HousingComplex.Exceptions;
 using HousingComplex.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace HousingComplex.Services.Imp
+namespace HousingComplex.Services.Impl
 {
     public class HousingService : IHousingService
     {
@@ -25,6 +26,21 @@ namespace HousingComplex.Services.Imp
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
+
+        public async Task<Housing> GetById(string id)
+        {
+            try
+            {
+                var housing = await _repository.FindById(Guid.Parse(id));
+                if (housing is null) throw new NotFoundException("Housing not found!");
+                return housing;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
                 throw;
             }
         }

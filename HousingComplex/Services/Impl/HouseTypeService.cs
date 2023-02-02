@@ -1,8 +1,9 @@
 ﻿using HousingComplex.DTOs;
 using HousingComplex.Entities;
+using HousingComplex.Exceptions;
 using HousingComplex.Repositories;
 
-namespace HousingComplex.Services.Imp
+namespace HousingComplex.Services.Impl
 {
     public class HouseTypeService : IHouseTypeService
     {
@@ -25,6 +26,22 @@ namespace HousingComplex.Services.Imp
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
+
+        public async Task<HouseType> GetForTransaction(string id)
+        {
+            try
+            {
+                var houseType = await _repository.Find(type => type.Id.Equals(Guid.Parse(id)),
+                    new[] { "Housing" });
+                if (houseType is null) throw new NotFoundException("House Type Not Found!");
+                return houseType;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
                 throw;
             }
         }
@@ -62,7 +79,7 @@ namespace HousingComplex.Services.Imp
                 StockUnit = house.StockUnit,
                 SpesificationId = house.SpesificationId,
                 HousingId = house.HousingId,
-                ImageId = house.ImageId,
+                ImageHouseTypeId = house.ImageHouseTypeId,
                 Spesification = house.Spesification,
                 Housing = house.Housing,
                 ImageHouseType = house.ImageHouseType

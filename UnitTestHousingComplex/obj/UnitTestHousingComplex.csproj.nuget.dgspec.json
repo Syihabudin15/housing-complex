@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Final_Project_Enigma\\housingcomplex\\UnitTestHousingComplex\\UnitTestHousingComplex.csproj": {}
+    "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\UnitTestHousingComplex\\UnitTestHousingComplex.csproj": {}
   },
   "projects": {
-    "D:\\Final_Project_Enigma\\housingcomplex\\HousingComplex\\HousingComplex.csproj": {
+    "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\HousingComplex\\HousingComplex.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Final_Project_Enigma\\housingcomplex\\HousingComplex\\HousingComplex.csproj",
+        "projectUniqueName": "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\HousingComplex\\HousingComplex.csproj",
         "projectName": "HousingComplex",
-        "projectPath": "D:\\Final_Project_Enigma\\housingcomplex\\HousingComplex\\HousingComplex.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\Final_Project_Enigma\\housingcomplex\\HousingComplex\\obj\\",
+        "projectPath": "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\HousingComplex\\HousingComplex.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\HousingComplex\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -77,6 +72,10 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[9.0.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -97,6 +96,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -109,21 +126,17 @@
         }
       }
     },
-    "D:\\Final_Project_Enigma\\housingcomplex\\UnitTestHousingComplex\\UnitTestHousingComplex.csproj": {
+    "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\UnitTestHousingComplex\\UnitTestHousingComplex.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Final_Project_Enigma\\housingcomplex\\UnitTestHousingComplex\\UnitTestHousingComplex.csproj",
+        "projectUniqueName": "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\UnitTestHousingComplex\\UnitTestHousingComplex.csproj",
         "projectName": "UnitTestHousingComplex",
-        "projectPath": "D:\\Final_Project_Enigma\\housingcomplex\\UnitTestHousingComplex\\UnitTestHousingComplex.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\Final_Project_Enigma\\housingcomplex\\UnitTestHousingComplex\\obj\\",
+        "projectPath": "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\UnitTestHousingComplex\\UnitTestHousingComplex.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\UnitTestHousingComplex\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -131,15 +144,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Final_Project_Enigma\\housingcomplex\\HousingComplex\\HousingComplex.csproj": {
-                "projectPath": "D:\\Final_Project_Enigma\\housingcomplex\\HousingComplex\\HousingComplex.csproj"
+              "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\HousingComplex\\HousingComplex.csproj": {
+                "projectPath": "E:\\Bootcamp .NET Enigma\\Project\\API\\HousingComplexAPI\\housing-complex\\HousingComplex\\HousingComplex.csproj"
               }
             }
           }
@@ -190,6 +202,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.12, 6.0.12]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"

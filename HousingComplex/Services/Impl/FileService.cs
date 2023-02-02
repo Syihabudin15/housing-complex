@@ -1,6 +1,9 @@
 ﻿using System.Net.Http.Headers;
+using HousingComplex.Dto.ImageType;
+using HousingComplex.Exceptions;
+using Microsoft.AspNetCore.StaticFiles;
 
-namespace HousingComplex.Services.Imp
+namespace HousingComplex.Services.Impl
 {
     public class FileService : IFileService
     {
@@ -22,6 +25,35 @@ namespace HousingComplex.Services.Imp
             await file.CopyToAsync(stream);
 
             return dbPath;
+        }
+
+        public async Task<FileDownloadResponse> DownloadFile(string filepath, string filename)
+        {
+            if (!File.Exists(filepath)) throw new NotFoundException("file not found");
+
+            var memory = new MemoryStream();
+            await using var stream = new FileStream(filepath, FileMode.Open);
+            await stream.CopyToAsync(memory);
+
+            memory.Position = 0;
+            return new FileDownloadResponse
+            {
+                MemoryStream = memory,
+                ContentType = GetContentType(filepath),
+                Filename = filename
+            };
+        }
+        
+        private string GetContentType(string path)
+        {
+            var provider = new FileExtensionContentTypeProvider();
+
+            if (!provider.TryGetContentType(path, out var contentType))
+            {
+                contentType = "application/octet-stream";
+            }
+
+            return contentType;
         }
     }
 }
