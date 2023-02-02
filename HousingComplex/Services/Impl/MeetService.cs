@@ -2,6 +2,7 @@
 using HousingComplex.Dto.Customer;
 using HousingComplex.Dto.Housing;
 using HousingComplex.Dto.Meet;
+using HousingComplex.DTOs;
 using HousingComplex.Entities;
 using HousingComplex.Exceptions;
 using HousingComplex.Repositories;
@@ -14,13 +15,15 @@ public class MeetService : IMeetService
     private readonly IPersistence _persistence;
     private readonly IHousingService _housingService;
     private readonly ICustomerService _customerService;
+    private readonly IDeveloperService _developerService;
 
-    public MeetService(IRepository<Meet> repository, IPersistence persistence, IHousingService housingService, ICustomerService customerService)
+    public MeetService(IRepository<Meet> repository, IPersistence persistence, IHousingService housingService, ICustomerService customerService, IDeveloperService developerService)
     {
         _repository = repository;
         _persistence = persistence;
         _housingService = housingService;
         _customerService = customerService;
+        _developerService = developerService;
     }
 
     public async Task<MeetResponse> CreateMeetSchedule(Meet meet)
@@ -69,6 +72,46 @@ public class MeetService : IMeetService
             Console.WriteLine(e);
             throw;
         }
+    }
+
+    public async Task<PageResponse<MeetResponse>> GetAllSchedule(int page, int size, string email)
+    {
+        var developer = await _developerService.GetForMeeting(email);
+        var responses = developer.Housing.Meets.Select(meet => new MeetResponse
+        {
+            Id = meet.Id.ToString(),
+            MeetDate = meet.MeetDate,
+            IsMeet = meet.IsMeet,
+            Housing = new HousingResponse
+            {
+                Id = meet.Housing.Id.ToString(),
+                Name = meet.Housing.Name,
+                Address = meet.Housing.Address,
+                OpenTime = meet.Housing.OpenTime,
+                City = meet.Housing.City
+            },
+            Customer = new CustomerResponse
+            {
+                Id = meet.Customer.Id.ToString(),
+                FisrtName = meet.Customer.FirstName,
+                LastName = meet.Customer.LastName,
+                City = meet.Customer.City,
+                PostalCode = meet.Customer.PostalCode,
+                Address = meet.Customer.Address,
+                PhoneNumber = meet.Customer.PhoneNumber
+            }
+        }).ToList();
+
+        var totalPage = (int)Math.Ceiling((developer.Housing.Meets.Count()) / (decimal)size);
+        
+        PageResponse<MeetResponse> result = new()
+        {
+            Content = responses,
+            TotalPages = totalPage,
+            TotalElement = developer.Housing.Meets.Count()
+        };
+
+        return result;
     }
 
     private MeetResponse ConvertMeetToMeetResponse(Meet meet, Customer customer, Housing housing)

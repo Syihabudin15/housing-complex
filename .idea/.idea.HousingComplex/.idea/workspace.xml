@@ -6,74 +6,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4755ec3-f2d2-4d28-9bea-5d8cd9b7521c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.vs/HousingComplex/FileContentIndex/2a18843e-ea73-4484-a705-31e2857b164d.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/HousingComplex/FileContentIndex/7f146775-a3f5-4706-afd4-f612e2045af6.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/HousingComplex/FileContentIndex/8c608aaa-311a-4ff5-9ed9-d73e4da57351.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/HousingComplex/FileContentIndex/ddbab5d6-4035-4da5-95bb-981c2959ef60.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Controllers/HouseTypeController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Controllers/HousingController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Controllers/ImageHouseTypeController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Controllers/SpesificationController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Dto/ImageType/UploadFileResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Dto/PageResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Services/IFileService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Services/IHouseTypeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Services/IHousingService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Services/IImageHouseTypeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Services/ISpesificationService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/FileService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/HouseTypeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/HousingService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/ImageHouseTypeService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/SpesificationService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HousingComplex/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HousingComplex/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/HousingComplex/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/HousingComplex/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/HousingComplex/FileContentIndex/a6577b87-e0b8-4783-ad89-37493d2b597f.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/HousingComplex/FileContentIndex/d875bf79-dd00-4fde-b87c-d016705011d8.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/HousingComplex/FileContentIndex/dcfc43cb-f92c-4932-91fb-b34053a6ade4.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/HousingComplex/FileContentIndex/e5f6e47c-8e98-494a-96be-0dbcd835a3e6.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/HousingComplex/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/HousingComplex/v17/.futdcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/HousingComplex/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/HousingComplex/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/housingcomplex.metadata.v5.2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/housingcomplex.metadata.v5.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/housingcomplex.projects.v5.2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/housingcomplex.projects.v5.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Controllers/MeetController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Controllers/MeetController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Controllers/TransactionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Controllers/TransactionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Dto/Transaction/TransactionResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Dto/Transaction/TransactionRequestResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/Entities/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Entities/Customer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Entities/HouseType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Entities/HouseType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Entities/ImageHouseType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Entities/ImageHouseType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Entities/Purchase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Entities/Transaction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Entities/PurchaseDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Entities/TransactionDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Extensions/ApplicationServiceExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Extensions/ApplicationServiceExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/HousingComplex.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/HousingComplex.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Entities/Developer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Entities/Developer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/Middleware/ExceptionHandlingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Middleware/ExceptionHandlingMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Migrations/20230131031204_InitialMigrate.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Migrations/20230131031204_InitialMigrate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Repositories/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Repositories/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/ICustomerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/ICustomerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/Impl/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/Impl/CustomerService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/CustomerService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Repositories/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Repositories/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Repositories/Repository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/IDeveloperService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/IDeveloperService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/IMeetService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/IMeetService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/ITransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/ITransactionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/Impl/DeveloperService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/DeveloperService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/Impl/MeetService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/MeetService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HousingComplex/Services/Impl/TransactionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/Services/Impl/TransactionService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/bin/Debug/net6.0/HousingComplex.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/HousingComplex.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/ref/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/ref/HousingComplex.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/refint/HousingComplex.dll" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/Debug/net6.0/refint/HousingComplex.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/HousingComplex.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/HousingComplex.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/HousingComplex.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/HousingComplex.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HousingComplex/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HousingComplex/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/HousingComplex/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/Services/CustomerServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/Services/CustomerServiceTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/Debug/net6.0/UnitTestHousingComplex.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/UnitTestHousingComplex.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/UnitTestHousingComplex.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UnitTestHousingComplex/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/UnitTestHousingComplex/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,11 +45,11 @@
       </map>
     </option>
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -104,14 +61,15 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/123735509fa19d358d3971345e1872b6d26687d1b343ad7ca37af43930694c/Guid.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d9a41d47547e1fe7fe548b21ab4de12cc2671170a023bc8c629017837eb5f4/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Bootcamp .NET Enigma/Project/API/HousingComplexAPI/housing-complex/HousingComplex/Controllers/AuthController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Bootcamp .NET Enigma/Project/API/HousingComplexAPI/housing-complex/HousingComplex/Entities/HouseType.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Bootcamp .NET Enigma/Project/API/HousingComplexAPI/housing-complex/HousingComplex/Repositories/AppDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Bootcamp .NET Enigma/Project/API/HousingComplexAPI/housing-complex/HousingComplex/Entities/Customer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
   <component name="ProjectId" id="2L4WQczNQljdY8kOjU9TeVdFQj0" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -174,13 +132,14 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="45d4c332-21a4-415c-8ed9-8c6475f4d782" name="Changes" comment="" />
+      <changelist id="e4755ec3-f2d2-4d28-9bea-5d8cd9b7521c" name="Changes" comment="" />
       <created>1675130819184</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675130819184</updated>
       <workItem from="1675130820482" duration="7008000" />
       <workItem from="1675137881855" duration="610000" />
+      <workItem from="1675295031555" duration="7536000" />
     </task>
     <task id="LOCAL-00001" summary="[Feature] Login Register Jwt, Middleware, Exception Handling, Extension Method Services">
       <created>1675137236203</created>
@@ -203,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675177177493</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[Feature] Create Transaction With Payment Gateway and Schedule Meeting">
+      <created>1675237797544</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675237797544</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +184,33 @@
       <expand>
         <path>
           <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
-          <item name="Total 26% 1072/1452" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Total 26% 1105/1485" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 26% 1105/1485" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 17% 1103/1329" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 26% 1105/1485" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 17% 1103/1329" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 17% 1086/1312" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 26% 1105/1485" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 17% 1103/1329" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 17% 1086/1312" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Dto 30% 171/243" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="Total 26% 1105/1485" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 17% 1103/1329" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="HousingComplex 17% 1086/1312" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="Dto 30% 171/243" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+          <item name="ErrorResponse 0% 5/5" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
         </path>
       </expand>
       <select />
@@ -242,36 +234,50 @@
     <MESSAGE value="[Feature] Login Register Jwt, Middleware, Exception Handling, Extension Method Services" />
     <MESSAGE value="[Feature]" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="[Feature] Create Transaction With Payment Gateway and Schedule Meeting" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Feature] Create Transaction With Payment Gateway and Schedule Meeting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/HousingComplex/Services/Impl/ImageHouseTypeService.cs</url>
-          <line>42</line>
-          <properties documentPath="E:\Bootcamp .NET Enigma\Project\API\HousingComplexAPI\housing-complex\HousingComplex\Services\Impl\ImageHouseTypeService.cs" initialLine="42" containingFunctionPresentation="method 'DownloadProfilePicture'">
+          <url>file://$PROJECT_DIR$/HousingComplex/Services/Impl/TransactionService.cs</url>
+          <line>37</line>
+          <properties documentPath="E:\Bootcamp .NET Enigma\Project\API\HousingComplexAPI\housing-complex\HousingComplex\Services\Impl\TransactionService.cs" initialLine="36" containingFunctionPresentation="method 'CreateTransaction'">
             <startOffsets>
-              <option value="1539" />
+              <option value="1583" />
             </startOffsets>
             <endOffsets>
-              <option value="1603" />
+              <option value="1646" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/HousingComplex/Controllers/ImageHouseTypeController.cs</url>
+          <line>26</line>
+          <properties documentPath="E:\Bootcamp .NET Enigma\Project\API\HousingComplexAPI\housing-complex\HousingComplex\Controllers\ImageHouseTypeController.cs" initialLine="26" containingFunctionPresentation="method 'CreateNewImageHouseType'">
+            <startOffsets>
+              <option value="814" />
+            </startOffsets>
+            <endOffsets>
+              <option value="886" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/HousingComplex/Services/Impl/MeetService.cs</url>
-          <line>60</line>
-          <properties documentPath="E:\Bootcamp .NET Enigma\Project\API\HousingComplexAPI\housing-complex\HousingComplex\Services\Impl\MeetService.cs" initialLine="60" containingFunctionPresentation="method 'UpdateIsMeetTrue'">
+          <line>78</line>
+          <properties documentPath="E:\Bootcamp .NET Enigma\Project\API\HousingComplexAPI\housing-complex\HousingComplex\Services\Impl\MeetService.cs" initialLine="78" containingFunctionPresentation="method 'GetAllSchedule'">
             <startOffsets>
-              <option value="2365" />
+              <option value="3131" />
             </startOffsets>
             <endOffsets>
-              <option value="2470" />
+              <option value="3192" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

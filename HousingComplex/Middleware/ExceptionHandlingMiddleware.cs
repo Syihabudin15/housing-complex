@@ -34,7 +34,7 @@ public class ExceptionHandlingMiddleware : IMiddleware
             await HandleExceptionAsync(context, e);
             _logger.LogError(e.Message);
         }
-        catch (Exception e) // Custome Exeption
+        catch (Exception e)
         {
             await HandleExceptionAsync(context, e);
             _logger.LogError(e.Message);

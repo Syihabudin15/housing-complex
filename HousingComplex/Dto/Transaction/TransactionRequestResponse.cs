@@ -2,7 +2,7 @@
 
 namespace HousingComplex.Dto.Transaction;
 
-public class TransactionResponse
+public class TransactionRequestResponse
 {
     public string Id { get; set; }
     public DateTime TransDate { get; set; }

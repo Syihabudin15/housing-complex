@@ -33,7 +33,7 @@ public class CustomerServiceTest
             PhoneNumber = "08123213412",
             UserCredentialId = Guid.NewGuid(),
             UserCredential = new UserCredential(),
-            Meet = new Meet()
+            Meet = new List<Meet>()
         };
 
         _mockRepository.Setup(repo => repo.Save(It.IsAny<Customer>()))

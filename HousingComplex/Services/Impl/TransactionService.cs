@@ -2,6 +2,7 @@
 using System.Text;
 using HousingComplex.Dto.PaymentGateway;
 using HousingComplex.Dto.Transaction;
+using HousingComplex.DTOs;
 using HousingComplex.Entities;
 using HousingComplex.Exceptions;
 using HousingComplex.Repositories;
@@ -32,12 +33,15 @@ public class TransactionService : ITransactionService
         _houseTypeService = houseTypeService;
     }
 
-    public async Task<TransactionResponse> CreateTransaction(TransactionRequest request, string email)
+    public async Task<TransactionRequestResponse> CreateTransaction(TransactionRequest request, string email)
     {
         var customer = await _customerService.GetForTransaction(email);
-        if (!customer.Meet.IsMeet)
-            throw new MeetingStatusNotTrueException("The customer must first meet with the developer");
         var houseType = await _houseTypeService.GetForTransaction(request.HouseTypeId);
+        if(customer.Meet == null) throw new MeetingStatusNotTrueException("The customer must first meet with the developer");
+        var meet = customer.Meet.ToList()[customer.Meet.Count - 1];
+        // var hs= customer.Meet.Select(meet => meet.HousingId.Equals(houseType.HousingId));
+        if(!meet.IsMeet)
+            throw new MeetingStatusNotTrueException("The customer must first meet with the developer");
 
         var requestTransactionDuitku = await RequestTransactionDuitku(customer, houseType, request);
 
@@ -59,9 +63,8 @@ public class TransactionService : ITransactionService
                 }
             };
             var savedTransaction = await _repository.Save(transaction);
-            houseType.StockUnit -= 1;
             await _persistence.SaveChangesAsync();
-            return new TransactionResponse
+            return new TransactionRequestResponse()
             {
                 Id = savedTransaction.Id.ToString(),
                 TransDate = savedTransaction.TransDate,
@@ -77,6 +80,39 @@ public class TransactionService : ITransactionService
     {
         var requestPaymentsDuitku = await RequestPaymentsDuitku(request.Amount);
         return requestPaymentsDuitku;
+    }
+
+    public async Task<PageResponse<TransactionGetAllResponse>> GetAllTransaction(int page, int size, string email)
+    {
+        var transaction = await _repository.FindAll(transaction => 
+                transaction.TransactionDetail.Housing.Developer.UserCredential.Email.Equals(email), page, size,
+        new[]
+        {
+            "TransactionDetail.Housing.Developer.UserCredential",
+            "TransactionDetail.HouseType"
+        });
+
+        var response = transaction.Select(transaction => new TransactionGetAllResponse
+        {
+            Id = transaction.Id.ToString(),
+            TransDate = transaction.TransDate,
+            TransactionDetailResponse = TransactionDetailResponse(transaction.TransactionDetail)
+        }).ToList();
+        
+        var totalPage = (int)Math.Ceiling((await _repository.Count(transaction => 
+            transaction.TransactionDetail.Housing.Developer.UserCredential.Email.Equals(email),new []
+        {
+            "TransactionDetail.Housing.Developer.UserCredential",
+            "TransactionDetail.HouseType"
+        })) / (decimal)size);
+        PageResponse<TransactionGetAllResponse> result = new()
+        {
+            Content = response,
+            TotalPages = totalPage,
+            TotalElement = transaction.Count()
+        };
+
+        return result;
     }
 
     public async Task<TransactionCheckResponse> CheckTransaction(string id)
@@ -97,6 +133,7 @@ public class TransactionService : ITransactionService
                 };
             case "00":
                 transaction.TransactionDetail.IsPaid = true;
+                transaction.TransactionDetail.HouseType.StockUnit -= 1;
                 await _persistence.SaveChangesAsync();
                 return new TransactionCheckResponse
                 {

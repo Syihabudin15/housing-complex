@@ -3,6 +3,7 @@ using System.Security.Claims;
 using HousingComplex.Dto;
 using HousingComplex.Dto.PaymentGateway;
 using HousingComplex.Dto.Transaction;
+using HousingComplex.DTOs;
 using HousingComplex.Entities;
 using HousingComplex.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -11,7 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace HousingComplex.Controllers;
 
 [ApiController]
-[Route("api/purchases")]
+[Route("api/transaction")]
 public class TransactionController : BaseController
 {
     private readonly ITransactionService _transactionService;
@@ -27,7 +28,7 @@ public class TransactionController : BaseController
     {
         var userEmail = User.FindFirst(ClaimTypes.Email).Value;
         var result = await _transactionService.CreateTransaction(request,userEmail);
-        CommonResponse<TransactionResponse> response = new()
+        CommonResponse<TransactionRequestResponse> response = new()
         {
             StatusCode = (int)HttpStatusCode.Created,
             Message = "Successfully create transaction",
@@ -62,5 +63,19 @@ public class TransactionController : BaseController
             Data = result
         };
         return Ok(response);
+    }
+    [HttpGet]
+    [Authorize(Roles = "Developer")]
+    public async Task<IActionResult> GetAllTransaction([FromQuery]int page, [FromQuery] int size)
+    {
+        var userEmail = User.FindFirst(ClaimTypes.Email).Value;
+        var result = await _transactionService.GetAllTransaction(page, size,userEmail);
+        CommonResponse<PageResponse<TransactionGetAllResponse>> response = new()
+        {
+            StatusCode = (int)HttpStatusCode.OK,
+            Message = "Successfully get all data Housing",
+            Data = result
+        };
+        return Ok(result);
     }
 }

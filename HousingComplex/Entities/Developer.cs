@@ -13,5 +13,6 @@ namespace HousingComplex.Entities
         [Column(name: "address", TypeName = "Varchar(100)")] public string Address { get; set; } = string.Empty;
 
         public virtual UserCredential? UserCredential { get; set; }
+        public virtual Housing? Housing { get; set; }
     }
 }

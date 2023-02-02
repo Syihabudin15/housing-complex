@@ -16,6 +16,6 @@ namespace HousingComplex.Entities
         [Column(name: "user_credential_id")] public Guid UserCredentialId { get; set; }
         
         public virtual UserCredential? UserCredential { get; set; }
-        public virtual Meet? Meet { get; set; }
+        public virtual ICollection<Meet>? Meet { get; set; }
     }
 }
