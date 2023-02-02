@@ -1,5 +1,6 @@
 ﻿using HousingComplex.Controllers;
 using HousingComplex.Dto;
+using HousingComplex.Dto.HouseType;
 using HousingComplex.DTOs;
 using HousingComplex.Entities;
 using HousingComplex.Services;
@@ -29,7 +30,7 @@ namespace UnitTestHousingComplex.Controllers
                 StockUnit = 10,
                 SpesificationId = Guid.NewGuid(),
                 HousingId = Guid.NewGuid(),
-                ImageId = Guid.NewGuid()
+                ImageHouseTypeId = Guid.NewGuid()
                 },
                 new()
                 {
@@ -40,7 +41,7 @@ namespace UnitTestHousingComplex.Controllers
                 StockUnit = 20,
                 SpesificationId = Guid.NewGuid(),
                 HousingId = Guid.NewGuid(),
-                ImageId = Guid.NewGuid(),
+                ImageHouseTypeId = Guid.NewGuid(),
                 }
             };
 
@@ -62,7 +63,7 @@ namespace UnitTestHousingComplex.Controllers
                 StockUnit = 10,
                 SpesificationId = Guid.NewGuid(),
                 HousingId = Guid.NewGuid(),
-                ImageId = Guid.NewGuid()
+                ImageHouseTypeId = Guid.NewGuid()
             };
             CommonResponse<HouseType> response = new()
             {
@@ -84,13 +85,20 @@ namespace UnitTestHousingComplex.Controllers
         public async Task Should_ReturnOk_When_GetAllHouseType()
         {
             var totalPage = (int)Math.Ceiling(houseTypes.Count() / (decimal)5);
-            CommonResponse<PageResponse<HouseType>> response = new()
+            CommonResponse<PageResponse<HouseTypeResponse>> response = new()
             {
                 StatusCode = (int)HttpStatusCode.OK,
                 Message = "Successfully get all data Housetype",
-                Data = new PageResponse<HouseType>
+                Data = new PageResponse<HouseTypeResponse>
                 {
-                    Content = houseTypes,
+                    Content = houseTypes.Select(h => new HouseTypeResponse
+                    {
+                        Id = h.Id.ToString(),
+                        Name = h.Name,
+                        Description = h.Description,
+                        Price = h.Price,
+                        StockUnit = h.StockUnit
+                    }).ToList(),
                     TotalPages = totalPage,
                     TotalElement = houseTypes.Count
                 }
@@ -98,7 +106,7 @@ namespace UnitTestHousingComplex.Controllers
             _service.Setup(serv => serv.GetAllHouseType(It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(response.Data);
 
             var controller = await _controller.GetAllHouseType(1, 5) as OkObjectResult;
-            var result = controller?.Value as CommonResponse<PageResponse<HouseType>>;
+            var result = controller?.Value as CommonResponse<PageResponse<HouseTypeResponse>>;
 
             Assert.Equal(response.StatusCode, result?.StatusCode);
             Assert.Equal(response.Message, result?.Message);
@@ -110,13 +118,20 @@ namespace UnitTestHousingComplex.Controllers
         {
             var name = "30/70";
             var totalPage = (int)Math.Ceiling(houseTypes.Count() / (decimal)5);
-            CommonResponse<PageResponse<HouseType>> response = new()
+            CommonResponse<PageResponse<HouseTypeResponse>> response = new()
             {
                 StatusCode = (int)HttpStatusCode.OK,
                 Message = "Successfully search all data with name in HouseType",
-                Data = new PageResponse<HouseType>
+                Data = new PageResponse<HouseTypeResponse>
                 {
-                    Content = houseTypes,
+                    Content = houseTypes.Select(h => new HouseTypeResponse
+                    {
+                        Id = h.Id.ToString(),
+                        Name = h.Name,
+                        Description = h.Description,
+                        Price = h.Price,
+                        StockUnit = h.StockUnit
+                    }).ToList(),
                     TotalPages = totalPage,
                     TotalElement = houseTypes.Count
                 }
@@ -124,7 +139,7 @@ namespace UnitTestHousingComplex.Controllers
             _service.Setup(serv => serv.SearchByName(It.IsAny<string>(),It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(response.Data);
 
             var controller = await _controller.SearchByName(name, 1, 5) as OkObjectResult;
-            var result = controller?.Value as CommonResponse<PageResponse<HouseType>>;
+            var result = controller?.Value as CommonResponse<PageResponse<HouseTypeResponse>>;
 
             Assert.Equal(response.StatusCode, result?.StatusCode);
             Assert.Equal(response.Message, result?.Message);

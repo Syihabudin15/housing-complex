@@ -1,4 +1,6 @@
-﻿using HousingComplex.Entities;
+﻿using HousingComplex.Dto.Housing;
+using HousingComplex.DTOs;
+using HousingComplex.Entities;
 using HousingComplex.Repositories;
 using HousingComplex.Services;
 using HousingComplex.Services.Impl;
@@ -21,23 +23,37 @@ namespace UnitTestHousingComplex.Services
         private readonly List<Housing> housings = new List<Housing>
         {
             new()
-                {
-                    Id = Guid.NewGuid(),
+            {
+                Id = Guid.NewGuid(),
                 Name = "old Grand",
                 Address = "jl. juanda",
                 City = "Bandung",
                 DeveloperId = Guid.NewGuid(),
-                OpenTime = "Weekend"
-                },
-                new()
+                OpenTime = "Weekend",
+                Developer = new()
                 {
                     Id = Guid.NewGuid(),
+                    Name = "oke",
+                    Address = "okelagi",
+                    PhoneNumber = "1234567890",
+                }
+            },
+            new()
+            {
+                Id = Guid.NewGuid(),
                 Name = "new Grand",
                 Address = "jl. budiman",
                 City = "Bandung",
                 DeveloperId = Guid.NewGuid(),
-                OpenTime = "Weekend"
+                OpenTime = "Weekend",
+                Developer = new()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "oke",
+                    Address = "okelagi",
+                    PhoneNumber = "1234567890",
                 }
+            }
         };
 
         public HousingServiceTest()
@@ -59,6 +75,7 @@ namespace UnitTestHousingComplex.Services
                 DeveloperId = Guid.NewGuid(),
                 OpenTime = "Weekend"
             };
+
             _repository.Setup(repo => repo.Save(It.IsAny<Housing>())).ReturnsAsync(housing);
             _persistence.Setup(pers => pers.SaveChangesAsync());
 
@@ -68,7 +85,26 @@ namespace UnitTestHousingComplex.Services
         }
 
         [Fact]
-        public async Task Should_ReturnListHousing_When_GetAllHousing()
+        public async Task Should_ReturnHousing_When_GetById()
+        {
+            var housing = new Housing
+            {
+                Id = Guid.NewGuid(),
+                Name = "Granded",
+                Address = "jl. juanda",
+                City = "Bandung",
+                DeveloperId = Guid.NewGuid(),
+                OpenTime = "Weekend"
+            };
+            _repository.Setup(repo => repo.FindById(It.IsAny<Guid>())).ReturnsAsync(housing);
+
+            var result = await _service.GetById(housing.Id.ToString());
+
+            Assert.Equal(housing, result);
+        }
+
+        [Fact]
+        public async Task Should_ReturnListHousingResponse_When_GetAllHousing()
         {
             _repository.Setup(repository => repository.FindAll(
             It.IsAny<Expression<Func<Housing, bool>>>(),
@@ -76,11 +112,25 @@ namespace UnitTestHousingComplex.Services
             It.IsAny<int>(),
             It.IsAny<string[]>()
         )).ReturnsAsync(housings);
+            PageResponse<HousingResponse> pageResponse = new PageResponse<HousingResponse>
+            {
+                Content = housings.Select(h => new HousingResponse
+                {
+                    Id = h.Id.ToString(),
+                    Name = h.Name,
+                    Address = h.Address,
+                    City = h.City,
+                    OpenTime = h.OpenTime
+                }).ToList(),
+                TotalPages = 1,
+                TotalElement = 2
+            };
 
             var result = await _service.GetAllHousing(1, 5);
-
-            Assert.Equal(housings.Count, result.Content.Count);
+            
+            Assert.Equal(pageResponse.Content.Count, result.Content.Count);
         }
+
         [Fact]
         public async Task Should_ReturnListHousing_When_SearchByName()
         {
@@ -90,10 +140,23 @@ namespace UnitTestHousingComplex.Services
             It.IsAny<int>(),
             It.IsAny<string[]>()
         )).ReturnsAsync(housings);
+            PageResponse<HousingResponse> pageResponse = new PageResponse<HousingResponse>
+            {
+                Content = housings.Select(h => new HousingResponse
+                {
+                    Id = h.Id.ToString(),
+                    Name = h.Name,
+                    Address = h.Address,
+                    City = h.City,
+                    OpenTime = h.OpenTime
+                }).ToList(),
+                TotalPages = 1,
+                TotalElement = 2
+            };
 
             var result = await _service.SearchByName("Grand", 1, 5);
 
-            Assert.Equal(housings.Count, result.Content.Count);
+            Assert.Equal(pageResponse.Content.Count, result.Content.Count);
         }
 
         [Fact]
@@ -105,10 +168,23 @@ namespace UnitTestHousingComplex.Services
             It.IsAny<int>(),
             It.IsAny<string[]>()
         )).ReturnsAsync(housings);
+            PageResponse<HousingResponse> pageResponse = new PageResponse<HousingResponse>
+            {
+                Content = housings.Select(h => new HousingResponse
+                {
+                    Id = h.Id.ToString(),
+                    Name = h.Name,
+                    Address = h.Address,
+                    City = h.City,
+                    OpenTime = h.OpenTime
+                }).ToList(),
+                TotalPages = 1,
+                TotalElement = 2
+            };
 
             var result = await _service.SearchByCity("Bandung", 1, 5);
 
-            Assert.Equal(housings.Count, result.Content.Count);
+            Assert.Equal(pageResponse.Content.Count, result.Content.Count);
         }
     }
 }

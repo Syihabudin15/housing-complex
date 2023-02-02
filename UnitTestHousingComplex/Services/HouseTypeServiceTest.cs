@@ -1,4 +1,6 @@
-﻿using HousingComplex.Entities;
+﻿using HousingComplex.Dto.HouseType;
+using HousingComplex.DTOs;
+using HousingComplex.Entities;
 using HousingComplex.Repositories;
 using HousingComplex.Services;
 using HousingComplex.Services.Impl;
@@ -28,7 +30,42 @@ namespace UnitTestHousingComplex.Services
                 StockUnit = 20,
                 HousingId = Guid.NewGuid(),
                 SpesificationId = Guid.NewGuid(),
-                ImageHouseTypeId = Guid.NewGuid()
+                ImageHouseTypeId = Guid.NewGuid(),
+                Spesification = new()
+                {
+                    Id = Guid.NewGuid(),
+                    Bedrooms = 1,
+                    Bathrooms = 2,
+                    Kitchens = 1,
+                    Carport = true,
+                    SwimmingPool = false,
+                    SecondFloor = false
+                },
+                Housing = new()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "okeOke",
+                    Address = "jl. Kenanga",
+                    City = "jakarta",
+                    DeveloperId = Guid.NewGuid(),
+                    OpenTime = "weekend",
+                    Developer = new()
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = "Syihab",
+                        Address = "kp. Cantel",
+                        PhoneNumber = "0912873421443",
+                        UserCredentialId = Guid.NewGuid(),
+                    }
+                },
+                ImageHouseType = new()
+                {
+                    Id = Guid.NewGuid(),
+                    FileName = "success.png",
+                    FileSize = 2121,
+                    FilePath = "Resource/Image/success.png",
+                    ContentType = "image/png"
+                }
                 }
             };
 
@@ -60,22 +97,28 @@ namespace UnitTestHousingComplex.Services
         }
 
         [Fact]
-        public async Task Should_ReturnListHouseType_When_GetAllHouseType()
+        public async Task Should_ReturnHouseType_When_GetById()
         {
-            _repository.Setup(repository => repository.FindAll(
-            It.IsAny<Expression<Func<HouseType, bool>>>(),
-            It.IsAny<int>(),
-            It.IsAny<int>(),
-            It.IsAny<string[]>()
-        )).ReturnsAsync(houseTypes);
+            var houseType = new HouseType()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Type 30/70",
+                Description = "Description",
+                Price = 80000000,
+                StockUnit = 20,
+                HousingId = Guid.NewGuid(),
+                SpesificationId = Guid.NewGuid(),
+                ImageHouseTypeId = Guid.NewGuid()
+            };
+            _repository.Setup(repo => repo.Find(It.IsAny<Expression<Func<HouseType, bool>>>(), It.IsAny<string[]>())).ReturnsAsync(houseType);
 
-            var result = await _service.GetAllHouseType(1, 5);
+            var result = await _service.GetForTransaction(houseType.Id.ToString());
 
-            Assert.Equal(houseTypes.Count, result.Content.Count);
+            Assert.Equal(houseType, result);
         }
 
         [Fact]
-        public async Task Should_ReturnListHouseType_When_SearchByName()
+        public async Task Should_ReturnListHouseTypeResponse_When_GetAllHouseType()
         {
             _repository.Setup(repository => repository.FindAll(
             It.IsAny<Expression<Func<HouseType, bool>>>(),
@@ -83,10 +126,54 @@ namespace UnitTestHousingComplex.Services
             It.IsAny<int>(),
             It.IsAny<string[]>()
         )).ReturnsAsync(houseTypes);
-            var name = "Type";
+            PageResponse<HouseTypeResponse> pageResponse = new()
+            {
+                Content = houseTypes.Select(h => new HouseTypeResponse
+                {
+                    Id = h.Id.ToString(),
+                    Name = h.Name,
+                    Description = h.Description,
+                    Price = h.Price,
+                    StockUnit = h.StockUnit
+                }).ToList(),
+                TotalPages = 1,
+                TotalElement = 2
+            };
+
+
+            var result = await _service.GetAllHouseType(1, 5);
+
+            Assert.Equal(pageResponse.Content.Count, result.Content.Count);
+        }
+
+        [Fact]
+        public async Task Should_ReturnListHouseTypeResponse_When_SearchByName()
+        {
+            _repository.Setup(repository => repository.FindAll(
+            It.IsAny<Expression<Func<HouseType, bool>>>(),
+            It.IsAny<int>(),
+            It.IsAny<int>(),
+            It.IsAny<string[]>()
+        )).ReturnsAsync(houseTypes);
+            PageResponse<HouseTypeResponse> pageResponse = new()
+            {
+                Content = houseTypes.Select(h => new HouseTypeResponse
+                {
+                    Id = h.Id.ToString(),
+                    Name = h.Name,
+                    Description = h.Description,
+                    Price = h.Price,
+                    StockUnit = h.StockUnit,
+                    Spesification = h.Spesification
+                }).ToList(),
+                TotalPages = 1,
+                TotalElement = 2
+            };
+            var name = "30/70";
+
             var result = await _service.SearchByName(name, 1, 5);
 
-            Assert.Equal(houseTypes.Count, result.Content.Count);
+            Assert.Equal(pageResponse.Content.Count, result.Content.Count);
         }
     }
 }

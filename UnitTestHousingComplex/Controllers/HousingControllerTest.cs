@@ -1,5 +1,6 @@
 ﻿using HousingComplex.Controllers;
 using HousingComplex.Dto;
+using HousingComplex.Dto.Housing;
 using HousingComplex.DTOs;
 using HousingComplex.Entities;
 using HousingComplex.Repositories;
@@ -83,13 +84,20 @@ namespace UnitTestHousingComplex.Controllers
             var size = 5;
             var totalPage = (int)Math.Ceiling(housings.Count() / (decimal)size);
 
-            var response = new CommonResponse<PageResponse<Housing>>
+            var response = new CommonResponse<PageResponse<HousingResponse>>
             {
                 StatusCode = (int)HttpStatusCode.OK,
                 Message = "Successfully get all data Housing",
-                Data = new PageResponse<Housing>
+                Data = new PageResponse<HousingResponse>
                 {
-                    Content = housings,
+                    Content = housings.Select(h => new HousingResponse
+                    {
+                        Id = h.Id.ToString(),
+                        Name = h.Name,
+                        Address = h.Address,
+                        City = h.City,
+                        OpenTime = h.OpenTime
+                    }).ToList(),
                     TotalPages = totalPage,
                     TotalElement = housings.Count()
                 }
@@ -97,7 +105,7 @@ namespace UnitTestHousingComplex.Controllers
             _service.Setup(serv => serv.GetAllHousing(It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(response.Data);
 
             var controller = await _controller.GetAllHousing(page, size) as OkObjectResult;
-            var result = controller?.Value as CommonResponse<PageResponse<Housing>>;
+            var result = controller?.Value as CommonResponse<PageResponse<HousingResponse>>;
             
             _service.Verify(serv => serv.GetAllHousing(1, 5), Times.Once);
             Assert.Equal(response.StatusCode, result?.StatusCode);
@@ -113,13 +121,20 @@ namespace UnitTestHousingComplex.Controllers
             var name = "Grand";
             var totalPage = (int)Math.Ceiling(housings.Count() / (decimal)size);
 
-            var response = new CommonResponse<PageResponse<Housing>>
+            var response = new CommonResponse<PageResponse<HousingResponse>>
             {
                 StatusCode = (int)HttpStatusCode.OK,
                 Message = "Successfully search all data with name in Housing",
-                Data = new PageResponse<Housing>
+                Data = new PageResponse<HousingResponse>
                 {
-                    Content = housings,
+                    Content = housings.Select(h => new HousingResponse
+                    {
+                        Id = h.Id.ToString(),
+                        Name = h.Name,
+                        Address = h.Address,
+                        City = h.City,
+                        OpenTime = h.OpenTime
+                    }).ToList(),
                     TotalPages = totalPage,
                     TotalElement = housings.Count()
                 }
@@ -127,7 +142,7 @@ namespace UnitTestHousingComplex.Controllers
             _service.Setup(serv => serv.SearchByName(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(response.Data);
 
             var controller = await _controller.SearchByName(name, page, size) as OkObjectResult;
-            var result = controller?.Value as CommonResponse<PageResponse<Housing>>;
+            var result = controller?.Value as CommonResponse<PageResponse<HousingResponse>>;
 
             _service.Verify(serv => serv.SearchByName(name,1, 5), Times.Once);
             Assert.Equal(response.StatusCode, result?.StatusCode);
@@ -143,13 +158,20 @@ namespace UnitTestHousingComplex.Controllers
             var city = "Bandung";
             var totalPage = (int)Math.Ceiling(housings.Count() / (decimal)size);
 
-            var response = new CommonResponse<PageResponse<Housing>>
+            var response = new CommonResponse<PageResponse<HousingResponse>>
             {
                 StatusCode = (int)HttpStatusCode.OK,
                 Message = "Successfully search all data with name in Housing",
-                Data = new PageResponse<Housing>
+                Data = new PageResponse<HousingResponse>
                 {
-                    Content = housings,
+                    Content = housings.Select(h => new HousingResponse
+                    {
+                        Id = h.Id.ToString(),
+                        Name = h.Name,
+                        Address = h.Address,
+                        City = h.City,
+                        OpenTime = h.OpenTime
+                    }).ToList(),
                     TotalPages = totalPage,
                     TotalElement = housings.Count()
                 }
@@ -157,7 +179,7 @@ namespace UnitTestHousingComplex.Controllers
             _service.Setup(serv => serv.SearchByCity(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(response.Data);
 
             var controller = await _controller.SearchByCity(city, page, size) as OkObjectResult;
-            var result = controller?.Value as CommonResponse<PageResponse<Housing>>;
+            var result = controller?.Value as CommonResponse<PageResponse<HousingResponse>>;
 
             _service.Verify(serv => serv.SearchByCity(city, 1, 5), Times.Once);
             Assert.Equal(response.StatusCode, result?.StatusCode);

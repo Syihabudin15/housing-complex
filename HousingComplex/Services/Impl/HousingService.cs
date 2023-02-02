@@ -38,16 +38,7 @@ namespace HousingComplex.Services.Impl
             {
                 var housing = await _repository.FindById(Guid.Parse(id));
                 if (housing is null) throw new NotFoundException("Housing not found!");
-                //var result = new Housing
-                //{
-                //    Id = housing.Id,
-                //    Name = housing.Name,
-                //    Address = housing.Address,
-                //    City = housing.City,
-                //    OpenTime = housing.OpenTime,
-                //    Developer = housing.Developer
-                //};
-                //return result;
+               
                 return housing;
             }
             catch (Exception e)
