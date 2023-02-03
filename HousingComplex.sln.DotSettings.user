@@ -39,5 +39,8 @@
     &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.TransactionServiceTest.Should_TransactionCheckResponse_When_CheckTransaction&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.TransactionServiceTest.Should_TransactionCheckResponse_When_CheckTransactionExpiredOrPending&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Services.TransactionServiceTest.Should_TransactionCheckResponse_When_CheckTransactionSuccess&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Controllers.MeetControllerTest.Should_ReturnCreated_When_SchedulingMeet&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Controllers.MeetControllerTest.Should_ReturnOk_When_UpdateStatusMeet&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::69204AB6-959D-4705-9CFC-562438EABAAD::net6.0::UnitTestHousingComplex.Controllers.MeetControllerTest.Should_ReturnOK_When_GetAllScheduleMeet&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
