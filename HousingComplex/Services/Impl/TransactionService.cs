@@ -176,7 +176,7 @@ public class TransactionService : ITransactionService
         {
             merchantcode = _merchantCode,
             amount = amount,
-            datetime = time.ToString("MM/dd/yyyy HH:mm:ss"),
+            datetime = time.ToString("dd/MM/yyyy HH:mm:ss"),
             signature = signatureHash
         };
         

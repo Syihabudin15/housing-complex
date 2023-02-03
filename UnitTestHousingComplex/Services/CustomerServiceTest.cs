@@ -1,4 +1,6 @@
-﻿using HousingComplex.Entities;
+﻿using System.Linq.Expressions;
+using HousingComplex.Entities;
+using HousingComplex.Exceptions;
 using HousingComplex.Repositories;
 using HousingComplex.Services;
 using HousingComplex.Services.Impl;
@@ -44,5 +46,66 @@ public class CustomerServiceTest
         var result = await _customerService.CreateCustomer(customer);
         
         Assert.Equal(customer,result);
+    }
+
+    [Fact]
+    public async Task Should_ReturnCustomer_When_GetById()
+    {
+        var customer = new Customer
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "Achmad",
+            LastName = "Fikri",
+            City = "Bogor",
+            PostalCode = "16913",
+            Address = "Cibinong",
+            PhoneNumber = "0918321",
+            UserCredentialId = Guid.NewGuid(),
+            UserCredential = new UserCredential(),
+            Meet = new List<Meet>()
+        };
+        _mockRepository.Setup(repo => repo.FindById(It.IsAny<Guid>()))
+            .ReturnsAsync(customer);
+
+        var result = await _customerService.GetById(Guid.NewGuid().ToString());
+        
+        Assert.Equal(customer.FirstName,result.FirstName);
+    }
+
+    [Fact]
+    public async Task Should_ThrowNotFoundException_When_GetByIdIsNull()
+    {
+        await Assert.ThrowsAsync<NotFoundException>(() =>
+            _customerService.GetById(Guid.Empty.ToString()));
+    }
+
+    [Fact]
+    public async Task Should_ReturnCustomer_When_GetForTransaction()
+    {
+        var customer = new Customer
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "Achmad",
+            LastName = "Fikri",
+            City = "Bogor",
+            PostalCode = "16913",
+            Address = "Cibinong",
+            PhoneNumber = "0918321",
+            UserCredentialId = Guid.NewGuid(),
+            UserCredential = new UserCredential(),
+            Meet = new List<Meet>()
+        };
+        _mockRepository.Setup(repo => repo.Find(It.IsAny<Expression<Func<Customer, bool>>>(),
+            It.IsAny<string[]>())).ReturnsAsync(customer);
+
+        var result = await _customerService.GetForTransaction("achmad@gmail.com");
+        
+        Assert.Equal(customer.FirstName,result.FirstName);
+    }
+    [Fact]
+    public async Task Should_ThrowNotFoundException_When_GetForTransactionIsNull()
+    {
+        await Assert.ThrowsAsync<NotFoundException>(() =>
+            _customerService.GetForTransaction(Guid.Empty.ToString()));
     }
 }
